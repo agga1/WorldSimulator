@@ -32,7 +32,12 @@ public class Vector2d {
     public Vector2d subtract(Vector2d v){
         return new Vector2d(-v.x+this.x, -v.y+this.y);
     }
-    public  boolean equals(Vector2d v){
-        return (v.x == this.x) && (v.y == this.y);
+    public  boolean equals(Object v){
+        if(this == v)
+            return true;
+        if(!(v instanceof Vector2d))
+            return false;
+        Vector2d u = (Vector2d) v;
+        return (u.x == this.x) && (u.y == this.y);
     }
 }
