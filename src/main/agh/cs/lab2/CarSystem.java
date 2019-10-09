@@ -8,5 +8,10 @@ public class CarSystem {
         Vector2d position2 = new Vector2d(-2,1);
         System.out.println(position2);
         System.out.println(position1.add(position2));
+        MapDirection md = MapDirection.EAST;
+        out.println(md);
+        out.println(md.next());
+        out.println(md.toUnitVector());
+
     }
 }

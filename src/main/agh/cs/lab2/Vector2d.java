@@ -1,7 +1,6 @@
 package agh.cs.lab2;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
-import static java.lang.System.out;
 
 public class Vector2d {
     public final int x;
@@ -39,5 +38,8 @@ public class Vector2d {
             return false;
         Vector2d u = (Vector2d) v;
         return (u.x == this.x) && (u.y == this.y);
+    }
+    public Vector2d opposite(){
+       return new Vector2d((-1)*this.x, (-1)*this.y);
     }
 }
