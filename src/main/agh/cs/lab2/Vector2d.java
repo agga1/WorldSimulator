@@ -31,6 +31,12 @@ public class Vector2d {
     public Vector2d subtract(Vector2d v){
         return new Vector2d(-v.x+this.x, -v.y+this.y);
     }
+    public boolean precedes(Vector2d other){
+        return this.x <= other.x && this.y <= other.y;
+    }
+    public boolean follows(Vector2d other){
+        return this.x >= other.x && this.y >= other.y;
+    }
     public  boolean equals(Object v){
         if(this == v)
             return true;
