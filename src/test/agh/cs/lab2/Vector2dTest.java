@@ -2,15 +2,13 @@ package agh.cs.lab2;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class Vector2dTest {
     private Vector2d v1_1 = new Vector2d(1, 1);
     private Vector2d v2_1 = new Vector2d(2, 1);
     private Vector2d v1_3 = new Vector2d(1, 3);
-    private Vector2d v3_1 = new Vector2d(3, 1);
+    private Vector2d v3_2 = new Vector2d(3, 2);
 
     @Test
     public  void testEquals(){
@@ -41,17 +39,17 @@ public class Vector2dTest {
     }
     @Test
     public  void addTest(){
-        assertEquals(v2_1.add(v1_1), v3_1);
+        assertEquals(v2_1.add(v1_1), v3_2);
 
     }
     @Test
     public  void subtractTest(){
-        assertEquals(v3_1.subtract(v1_1), v2_1);
+        assertEquals(v3_2.subtract(v1_1), v2_1);
 
     }
     @Test
     public  void oppositeTest(){
-        assertEquals(v3_1.opposite(), new Vector2d(-3, 1));
+        assertNotEquals(v3_2.opposite(), new Vector2d(-3, 1));
 
     }
 
