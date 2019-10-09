@@ -10,6 +10,7 @@ public class Vector2dTest {
     private Vector2d v1_1 = new Vector2d(1, 1);
     private Vector2d v2_1 = new Vector2d(2, 1);
     private Vector2d v1_3 = new Vector2d(1, 3);
+    private Vector2d v3_1 = new Vector2d(3, 1);
 
     @Test
     public  void testEquals(){
@@ -32,31 +33,25 @@ public class Vector2dTest {
     }
     @Test
     public  void upperRightTest(){
-        assertFalse(v2_1.precedes(v1_1));
-
+        assertEquals(v2_1.upperRight(v1_1), v2_1);
     }
     @Test
     public  void lowerLeftTest(){
-        assertTrue(new Vector2d(1, 1).equals(new Vector2d(1, 1)));
-        assertFalse(new Vector2d(1, 2).equals(new Vector2d(1, 1)));
-
+        assertEquals(v2_1.lowerLeft(v1_1), v1_1);
     }
     @Test
     public  void addTest(){
-        assertTrue(new Vector2d(1, 1).equals(new Vector2d(1, 1)));
-        assertFalse(new Vector2d(1, 2).equals(new Vector2d(1, 1)));
+        assertEquals(v2_1.add(v1_1), v3_1);
 
     }
     @Test
     public  void subtractTest(){
-        assertTrue(new Vector2d(1, 1).equals(new Vector2d(1, 1)));
-        assertFalse(new Vector2d(1, 2).equals(new Vector2d(1, 1)));
+        assertEquals(v3_1.subtract(v1_1), v2_1);
 
     }
     @Test
     public  void oppositeTest(){
-        assertTrue(new Vector2d(1, 1).equals(new Vector2d(1, 1)));
-        assertFalse(new Vector2d(1, 2).equals(new Vector2d(1, 1)));
+        assertEquals(v3_1.opposite(), new Vector2d(-3, 1));
 
     }
 
