@@ -2,6 +2,7 @@ package agh.cs.lab2;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 public class MapDirectionTest {
@@ -11,16 +12,16 @@ public class MapDirectionTest {
     private MapDirection mdWest = MapDirection.WEST;
     @Test
     public void nextTest(){
-        assertTrue(mdEast.next()==MapDirection.SOUTH);
-        assertTrue(mdNorth.next()==MapDirection.EAST);
-        assertTrue(mdSouth.next()==MapDirection.WEST);
-        assertTrue(mdWest.next()==MapDirection.NORTH);
+        assertSame(mdEast.next(), mdSouth);
+        assertSame(mdNorth.next(),mdEast);
+        assertSame(mdSouth.next(), mdWest);
+        assertSame(mdWest.next(), mdNorth);
     }
     @Test
     public void previousTest(){
-        assertTrue(mdEast.previous()==MapDirection.NORTH);
-        assertTrue(mdNorth.previous()==MapDirection.WEST);
-        assertTrue(mdSouth.previous()==MapDirection.EAST);
-        assertTrue(mdWest.previous()==MapDirection.SOUTH);
+        assertSame(mdEast.previous(), mdNorth);
+        assertSame(mdNorth.previous(), mdWest);
+        assertSame(mdSouth.previous(), mdEast);
+        assertSame(mdWest.previous(), mdSouth);
     }
 }

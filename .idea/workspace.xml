@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1630644-ed29-482b-9917-5f3e673c82ba" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/agh/cs/lab2/CarSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/agh/cs/lab2/MapDirection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/agh/cs/lab2/MoveDirection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/agh/cs/lab2/Vector2d.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/agh/cs/lab3/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/agh/cs/lab3/OptionsParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab2/MainProg.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PO/agh/cs/lab2/MainProg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab2/Vector2d.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PO/agh/cs/lab2/Vector2d.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab3/Animal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PO/agh/cs/lab3/Animal$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab3/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PO/agh/cs/lab3/Animal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab3/OptionsParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PO/agh/cs/lab3/OptionsParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/PO/agh/cs/lab2/MapDirectionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/PO/agh/cs/lab2/MapDirectionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/PO/agh/cs/lab3/AnimalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/PO/agh/cs/lab3/AnimalTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/PO/agh/cs/lab3/OptionsParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/PO/agh/cs/lab3/OptionsParserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/agh/cs/lab2/CarSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/agh/cs/lab2/MapDirection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/agh/cs/lab2/MoveDirection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/agh/cs/lab2/Vector2d.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/lab2/MapDirectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/lab2/MapDirectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/lab3/AnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/lab3/AnimalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/lab3/OptionsParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/lab3/OptionsParserTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,28 +59,67 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="328352082">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="16" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="16" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="8" />
+          <entry key="java" value="594" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="594" />
+          <entry key="PLAIN_TEXT" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/lab3/Car.java">
+        <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab3/OptionsParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="153">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab2/MapDirectionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#324#325#0" expanded="true" />
-                <element signature="e#402#403#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/CarSystem.java">
+        <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab2/Vector2dTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+            <state relative-caret-position="-459">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,16 +128,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/lab3/OptionsParser.java">
+        <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab3/AnimalTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+            <state relative-caret-position="90">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/MoveDirection.java">
+        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/MapDirection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/MoveDirection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
@@ -99,10 +155,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/MapDirection.java">
+        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab3/OptionsParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+            <state relative-caret-position="391">
+              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/agh/cs/lab1/World.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/agh/cs/lab1/Direction.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab3/Animal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,9 +210,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/Vector2d.java" />
         <option value="$PROJECT_DIR$/src/test/MapDirectionTest.java" />
-        <option value="$PROJECT_DIR$/src/test/agh/cs/lab2/MapDirectionTest.java" />
-        <option value="$PROJECT_DIR$/src/main/agh/cs/lab2/Vector2d.java" />
-        <option value="$PROJECT_DIR$/src/test/agh/cs/lab2/Vector2dTest.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/lab2/MapDirection.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/lab2/MoveDirection.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/lab2/Position.java" />
@@ -135,6 +217,20 @@
         <option value="$PROJECT_DIR$/src/agh/cs/lab3/Car.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/lab2/CarSystem.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/lab3/OptionsParser.java" />
+        <option value="$PROJECT_DIR$/src/test/agh/cs/lab2/Vector2dTest.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab2/Vector2d.java" />
+        <option value="$PROJECT_DIR$/src/main/lab3/Car.java" />
+        <option value="$PROJECT_DIR$/src/main/agh.cs.lab3/Car.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab2/MapDirection.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab2/MoveDirection.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab2/CarSystem.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab3/OptionsParser.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab3/Car.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab3/Animal.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab2/MainProg.java" />
+        <option value="$PROJECT_DIR$/src/test/agh/cs/lab3/OptionsParserTest.java" />
+        <option value="$PROJECT_DIR$/src/test/agh/cs/lab2/MapDirectionTest.java" />
+        <option value="$PROJECT_DIR$/src/test/agh/cs/lab3/AnimalTest.java" />
       </list>
     </option>
   </component>
@@ -144,10 +240,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="949" />
-    <option name="width" value="980" />
-    <option name="height" value="1031" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="948" />
+    <option name="width" value="981" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -164,6 +260,11 @@
             <path>
               <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
               <item name="POlabs" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="POlabs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -183,7 +284,20 @@
               <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
               <item name="POlabs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="agh" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="POlabs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="cs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="POlabs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="cs" type="462c0819:PsiDirectoryNode" />
               <item name="lab2" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -191,7 +305,7 @@
               <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
               <item name="POlabs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="agh" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="cs" type="462c0819:PsiDirectoryNode" />
               <item name="lab3" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -199,14 +313,30 @@
               <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
               <item name="POlabs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
               <item name="POlabs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="cs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="POlabs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="cs" type="462c0819:PsiDirectoryNode" />
               <item name="lab2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="POlabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="POlabs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="cs" type="462c0819:PsiDirectoryNode" />
+              <item name="lab3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,7 +352,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570822988682" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571258431636" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5505747" />
@@ -232,6 +362,8 @@
       <recent name="agh.cs.lab2" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Agnieszka\Dev\Studia\POlabs\src\main\agh\cs\lab3" />
+      <recent name="C:\Users\Agnieszka\Dev\Studia\POlabs\src\main" />
       <recent name="C:\Users\Agnieszka\Dev\POlabs\src\agh\cs" />
     </key>
   </component>
@@ -247,20 +379,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CarSystem">
+  <component name="RunManager" selected="JUnit.All in PO">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CarSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cs.lab2.CarSystem" />
+    <configuration name="MainProg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="agh.cs.lab2.MainProg" />
       <module name="PO" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cs.lab2.*" />
+          <option name="PATTERN" value="agh.cs.lab2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -283,51 +415,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Vector2dTest.addTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimalTest.optParseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="agh.cs.lab2.*" />
+          <option name="PATTERN" value="agh.cs.lab3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="agh.cs.lab2" />
-      <option name="MAIN_CLASS_NAME" value="agh.cs.lab2.Vector2dTest" />
-      <option name="METHOD_NAME" value="addTest" />
+      <option name="PACKAGE_NAME" value="agh.cs.lab3" />
+      <option name="MAIN_CLASS_NAME" value="agh.cs.lab3.AnimalTest" />
+      <option name="METHOD_NAME" value="optParseTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Vector2dTest.subtractTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OptionsParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="agh.cs.lab2.*" />
+          <option name="PATTERN" value="agh.cs.lab3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="agh.cs.lab2" />
-      <option name="MAIN_CLASS_NAME" value="agh.cs.lab2.Vector2dTest" />
-      <option name="METHOD_NAME" value="subtractTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="agh.cs.lab3" />
+      <option name="MAIN_CLASS_NAME" value="agh.cs.lab3.OptionsParserTest" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Vector2dTest.toStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OptionsParserTest.parseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="agh.cs.lab2.*" />
+          <option name="PATTERN" value="agh.cs.lab3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="agh.cs.lab2" />
-      <option name="MAIN_CLASS_NAME" value="agh.cs.lab2.Vector2dTest" />
-      <option name="METHOD_NAME" value="toStringTest" />
+      <option name="PACKAGE_NAME" value="agh.cs.lab3" />
+      <option name="MAIN_CLASS_NAME" value="agh.cs.lab3.OptionsParserTest" />
+      <option name="METHOD_NAME" value="parseTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -359,18 +489,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in PO" />
-      <item itemvalue="JUnit.Vector2dTest.toStringTest" />
-      <item itemvalue="JUnit.Vector2dTest.addTest" />
-      <item itemvalue="JUnit.Vector2dTest.subtractTest" />
-      <item itemvalue="Application.CarSystem" />
+      <item itemvalue="Application.MainProg" />
+      <item itemvalue="JUnit.OptionsParserTest.parseTest" />
+      <item itemvalue="JUnit.OptionsParserTest" />
+      <item itemvalue="JUnit.AnimalTest.optParseTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CarSystem" />
-        <item itemvalue="JUnit.Vector2dTest.addTest" />
         <item itemvalue="JUnit.All in PO" />
-        <item itemvalue="JUnit.Vector2dTest.subtractTest" />
-        <item itemvalue="JUnit.Vector2dTest.toStringTest" />
+        <item itemvalue="JUnit.AnimalTest.optParseTest" />
+        <item itemvalue="JUnit.OptionsParserTest" />
+        <item itemvalue="JUnit.OptionsParserTest.parseTest" />
+        <item itemvalue="Application.MainProg" />
       </list>
     </recent_temporary>
   </component>
@@ -386,6 +516,8 @@
       <updated>1570631024938</updated>
       <workItem from="1570655087631" duration="312000" />
       <workItem from="1570820688799" duration="2279000" />
+      <workItem from="1571257266794" duration="883000" />
+      <workItem from="1571258222621" duration="208000" />
     </task>
     <task id="LOCAL-00001" summary="lab2 w tests">
       <created>1570633167480</created>
@@ -405,46 +537,46 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_PO - 2019.10.09 at 17h 20m 41s.xml">
+    <history-entry file="All_in_PO - 2019.10.16 at 16h 29m 10s.xml">
       <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_PO - 2019.10.09 at 17h 22m 25s.xml">
+    <history-entry file="All_in_PO - 2019.10.16 at 16h 49m 30s.xml">
       <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MapDirectionTest_previousTest - 2019.10.09 at 17h 08m 43s.xml">
-      <configuration name="MapDirectionTest.previousTest" configurationId="JUnit" />
+    <history-entry file="OptionsParserTest_parseTest - 2019.10.16 at 22h 29m 56s.xml">
+      <configuration name="OptionsParserTest.parseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Vector2dTest_testEquals - 2019.10.09 at 17h 10m 32s.xml">
-      <configuration name="Vector2dTest.testEquals" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Vector2dTest_toStringTest - 2019.10.09 at 17h 13m 34s.xml">
-      <configuration name="Vector2dTest.toStringTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_PO - 2019.10.09 at 23h 05m 48s.xml">
+    <history-entry file="All_in_PO - 2019.10.16 at 22h 30m 22s.xml">
       <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_PO - 2019.10.09 at 23h 08m 02s.xml">
+    <history-entry file="OptionsParserTest - 2019.10.16 at 22h 32m 57s.xml">
+      <configuration name="OptionsParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimalTest_optParseTest - 2019.10.16 at 22h 34m 13s.xml">
+      <configuration name="AnimalTest.optParseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimalTest_optParseTest - 2019.10.16 at 22h 34m 37s.xml">
+      <configuration name="AnimalTest.optParseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimalTest_optParseTest - 2019.10.16 at 22h 35m 26s.xml">
+      <configuration name="AnimalTest.optParseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_PO - 2019.10.16 at 22h 35m 30s.xml">
       <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_PO - 2019.10.09 at 23h 08m 33s.xml">
+    <history-entry file="All_in_PO - 2019.10.16 at 22h 39m 44s.xml">
       <configuration name="All in PO" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Vector2dTest_addTest - 2019.10.09 at 23h 08m 59s.xml">
-      <configuration name="Vector2dTest.addTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Vector2dTest_addTest - 2019.10.11 at 21h 18m 24s.xml">
-      <configuration name="Vector2dTest.addTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2591000" />
+    <option name="totallyTimeSpent" value="6069000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="633" y="0" width="653" height="687" extended-state="0" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.36593592" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19109312" />
+      <window_info id="Structure" order="1" weight="0.24939272" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -452,7 +584,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3628159" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36120996" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -514,58 +646,41 @@
     <option name="LAST_COMMIT_MESSAGE" value="lab2 w tests" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab2/MapDirectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/CarSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/Vector2d.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab1/World.java">
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab3/Car.java" />
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/CarSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="153">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab2/Vector2dTest.java">
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/MapDirection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="578">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/MoveDirection.java">
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/MoveDirection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/MapDirection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/lab3/Car.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/agh.cs.lab3/Car.java" />
     <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/Vector2d.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        <state relative-caret-position="96">
+          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
           <folding>
             <element signature="e#992#993#0" expanded="true" />
             <element signature="e#1053#1054#0" expanded="true" />
@@ -577,53 +692,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/Vector2d.java">
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab3/OptionsParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/MainProg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab3/Car.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#402#403#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/CarSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        <state relative-caret-position="119">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/MapDirection.java">
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab3/OptionsParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        <state relative-caret-position="391">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab2/MoveDirection.java">
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab1/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab1/Direction.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab3/Animal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/MoveDirection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/lab3/OptionsParser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/MapDirection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab2/MapDirectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab2/Vector2dTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab3/OptionsParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab3/AnimalTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
