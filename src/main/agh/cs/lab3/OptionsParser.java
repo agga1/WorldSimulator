@@ -3,6 +3,7 @@ package agh.cs.lab3;
 import agh.cs.lab2.MoveDirection;
 
 import java.util.Arrays;
+import static java.lang.System.out;
 
 public class OptionsParser {
     public MoveDirection[] parse(String ar[]){

@@ -27,16 +27,28 @@ public class Animal {
                 break;
             case FORWARD:
                 Vector2d newPos = this.position.add(this.direction.toUnitVector());
-                if(!newPos.follows(new Vector2d(0, 0)) || !newPos.precedes(new Vector2d(4, 4)))
+                if(!withinBoundaries(newPos))
                     return;
                 this.position = newPos;
                 break;
             case BACKWARD:
                 newPos = this.position.subtract(this.direction.toUnitVector());
-                if(!newPos.follows(new Vector2d(0, 0)) || !newPos.precedes(new Vector2d(4, 4)))
+                if(!withinBoundaries(newPos))
                     return;
                 this.position = newPos;
                 break;
         }
     }
+    private boolean withinBoundaries(Vector2d newPos){
+        return newPos.follows(new Vector2d(0, 0)) && newPos.precedes(new Vector2d(4, 4));
+    }
+
+    public MapDirection getDirection() {
+        return direction;
+    }
+
+    public Vector2d getPosition() {
+        return position;
+    }
+
 }
