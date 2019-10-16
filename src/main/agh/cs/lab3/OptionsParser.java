@@ -1,6 +1,8 @@
-package cs.lab3;
+package agh.cs.lab3;
 
-import cs.lab2.MoveDirection;
+import agh.cs.lab2.MoveDirection;
+
+import java.util.Arrays;
 
 public class OptionsParser {
     public MoveDirection[] parse(String ar[]){
@@ -25,6 +27,6 @@ public class OptionsParser {
                     md[i++]=MoveDirection.LEFT;
             }
         }
-        return md;
+        return Arrays.copyOf(md, i);
     }
 }

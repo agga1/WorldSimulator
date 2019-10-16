@@ -1,14 +1,14 @@
-package cs.lab3;
+package agh.cs.lab3;
 
-import cs.lab2.MapDirection;
-import cs.lab2.MoveDirection;
-import cs.lab2.Vector2d;
+import agh.cs.lab2.MapDirection;
+import agh.cs.lab2.Vector2d;
+import agh.cs.lab2.MoveDirection;
 
-public class Car {
+public class Animal {
     private MapDirection direction;
     private Vector2d position;
 
-    public Car() {
+    public Animal() {
         this.direction = MapDirection.NORTH;
         this.position = new Vector2d(2, 2);
     }

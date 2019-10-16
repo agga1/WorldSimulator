@@ -13,12 +13,6 @@ public class Vector2d {
     public String toString() {
         return "(" + this.x + ", " + this.y + ")";
     }
-    public boolean smaller(Vector2d v){
-        return (v.x >= this.x && v.y >= this.y);
-    }
-    public boolean larger(Vector2d v){
-        return (v.x <= this.x && v.y <= this.y);
-    }
     public Vector2d upperRight(Vector2d v){
         return new Vector2d(max(v.x, this.x), max(v.y, this.y));
     }
