@@ -2,7 +2,7 @@ package agh.cs.lab3;
 
 import agh.cs.lab2.MapDirection;
 import agh.cs.lab2.MoveDirection;
-import agh.cs.lab2.Vector2d;
+import agh.cs.lab2.Position;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -18,10 +18,10 @@ public class AnimalTest {
     private MapDirection s = MapDirection.SOUTH;
     private MapDirection w = MapDirection.WEST;
 
-    private Vector2d v2_2 = new Vector2d(2, 2);
-    private Vector2d v2_3 = new Vector2d(2, 3);
-    private Vector2d v2_4 = new Vector2d(2, 4);
-    private Vector2d v2_1 = new Vector2d(2, 1);
+    private Position v2_2 = new Position(2, 2);
+    private Position v2_3 = new Position(2, 3);
+    private Position v2_4 = new Position(2, 4);
+    private Position v2_1 = new Position(2, 1);
 
     @Test
     public void orientationTest(){

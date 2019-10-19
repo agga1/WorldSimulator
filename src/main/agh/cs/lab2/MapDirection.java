@@ -1,15 +1,15 @@
 package agh.cs.lab2;
 
 public enum MapDirection {
-    NORTH("Polnoc", new Vector2d(0, 1)),
-    SOUTH("Poludnie", new Vector2d(0, -1)),
-    WEST("Zachod", new Vector2d(-1, 0)),
-    EAST("Wschod", new Vector2d(1, 0));
+    NORTH("Polnoc", new Position(0, 1)),
+    SOUTH("Poludnie", new Position(0, -1)),
+    WEST("Zachod", new Position(-1, 0)),
+    EAST("Wschod", new Position(1, 0));
 
     private String translation;
-    private Vector2d unitV;
+    private Position unitV;
 
-    MapDirection(String translation, Vector2d unitV){
+    MapDirection(String translation, Position unitV){
         this.translation = translation;
         this.unitV = unitV;
     }
@@ -34,7 +34,7 @@ public enum MapDirection {
         }
         return null;
     }
-    public Vector2d toUnitVector(){
+    public Position toUnitVector(){
         return this.unitV;
     }
 }
