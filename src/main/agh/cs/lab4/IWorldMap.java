@@ -1,25 +1,25 @@
 package agh.cs.lab4;
 
 import agh.cs.lab2.MoveDirection;
-import agh.cs.lab2.Position;
+import agh.cs.lab2.Vector2d;
 import agh.cs.lab3.Animal;
 
 /**
  * The interface responsible for interacting with the map of the world.
- * Assumes that Position and MoveDirection classes are defined.
+ * Assumes that Vector2d and MoveDirection classes are defined.
  *
  * @author apohllo
  *
  */
 public interface IWorldMap {
     /**
-     * Indicate if any object can move to the given position.
+     * Indicate if any object can move to the given vector2d.
      *
-     * @param position
-     *            The position checked for the movement possibility.
-     * @return True if the object can move to that position.
+     * @param vector2d
+     *            The vector2d checked for the movement possibility.
+     * @return True if the object can move to that vector2d.
      */
-    boolean canMoveTo(Position position);
+    boolean canMoveTo(Vector2d vector2d);
 
     /**
      * Place a car on the map.
@@ -40,22 +40,22 @@ public interface IWorldMap {
     void run(MoveDirection[] directions);
 
     /**
-     * Return true if given position on the map is occupied. Should not be
+     * Return true if given vector2d on the map is occupied. Should not be
      * confused with canMove since there might be empty positions where the car
      * cannot move.
      *
-     * @param position
-     *            Position to check.
-     * @return True if the position is occupied.
+     * @param vector2d
+     *            Vector2d to check.
+     * @return True if the vector2d is occupied.
      */
-    boolean isOccupied(Position position);
+    boolean isOccupied(Vector2d vector2d);
 
     /**
-     * Return an object at a given position.
+     * Return an object at a given vector2d.
      *
-     * @param position
-     *            The position of the object.
-     * @return Object or null if the position is not occupied.
+     * @param vector2d
+     *            The vector2d of the object.
+     * @return Object or null if the vector2d is not occupied.
      */
-    Object objectAt(Position position);
+    Object objectAt(Vector2d vector2d);
 }

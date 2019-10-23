@@ -4,16 +4,16 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class PositionTest {
-    private Position v1_1 = new Position(1, 1);
-    private Position v2_1 = new Position(2, 1);
-    private Position v1_3 = new Position(1, 3);
-    private Position v3_2 = new Position(3, 2);
+public class Vector2dTest {
+    private Vector2d v1_1 = new Vector2d(1, 1);
+    private Vector2d v2_1 = new Vector2d(2, 1);
+    private Vector2d v1_3 = new Vector2d(1, 3);
+    private Vector2d v3_2 = new Vector2d(3, 2);
 
     @Test
     public  void testEquals(){
-        assertEquals(new Position(1, 1), new Position(1, 1));
-        assertNotEquals(new Position(1, 2), new Position(1, 1));
+        assertEquals(new Vector2d(1, 1), new Vector2d(1, 1));
+        assertNotEquals(new Vector2d(1, 2), new Vector2d(1, 1));
 
     }
     @Test
@@ -49,7 +49,7 @@ public class PositionTest {
     }
     @Test
     public  void oppositeTest(){
-        assertNotEquals(v3_2.opposite(), new Position(-3, 1));
+        assertNotEquals(v3_2.opposite(), new Vector2d(-3, 1));
 
     }
 
