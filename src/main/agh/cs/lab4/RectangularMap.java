@@ -21,8 +21,10 @@ public class RectangularMap implements IWorldMap {
     }
 
     public boolean canMoveTo(Vector2d vector2d){
-        if(vector2d.precedes(upRight) && vector2d.follows(lowLeft)) return false;
-        return !isOccupied(vector2d);
+        if(vector2d.precedes(upRight) && vector2d.follows(lowLeft)) {
+            return !isOccupied(vector2d);
+        }
+        else return false;
     }
 
     public boolean place(Animal animal){
@@ -38,7 +40,9 @@ public class RectangularMap implements IWorldMap {
         int i=0;
         int len = animals.size();
         for(MoveDirection dir : directions){
+            out.println("moving"+dir);
             animals.get(i).move(dir);
+            out.println(animals.get(i).getPosition());
             i = (i+1)%len;
         }
     }

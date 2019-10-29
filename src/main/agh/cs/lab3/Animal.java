@@ -1,4 +1,5 @@
 package agh.cs.lab3;
+import static java.lang.System.out;
 
 import agh.cs.lab2.MapDirection;
 import agh.cs.lab2.Vector2d;
@@ -42,7 +43,9 @@ public class Animal {
                 break;
             case FORWARD:
                 Vector2d newPos = this.vector2d.add(this.direction.toUnitVector());
-                if(!map.canMoveTo(newPos)) return;
+                if(!map.canMoveTo(newPos)){
+                    return;
+                }
                 this.vector2d = newPos;
                 break;
             case BACKWARD:
@@ -53,11 +56,6 @@ public class Animal {
         }
     }
 
-
-
-    private boolean withinBoundaries(Vector2d newPos){
-        return newPos.follows(new Vector2d(0, 0)) && newPos.precedes(new Vector2d(4, 4));
-    }
 
     public MapDirection getDirection() {
         return this.direction;

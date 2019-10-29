@@ -12,11 +12,16 @@ public class MainProg {
         MoveDirection[] directions = new OptionsParser().parse(args);
         IWorldMap map = new RectangularMap(10, 5);
 //        out.println(map.place(new Animal(map)));
-        out.println(map.place(new Animal(map,new Vector2d(3,4))));
-        out.println(map.place(new Animal(map,new Vector2d(4,4))));
+//        out.println(map.place(new Animal(map,new Vector2d(3,4))));
+//        out.println(map.place(new Animal(map,new Vector2d(4,4))));
         out.println(map.place(new Animal(map,new Vector2d(2,2))));
+        out.println(map.place(new Animal(map,new Vector2d(3,2))));
+        MoveDirection[] md = new MoveDirection[2];
+        md[0] = MoveDirection.FORWARD;
+        md[1] = MoveDirection.FORWARD;
 
-        map.run(directions);
+        map.run(md);
+//        map.run(directions);
         out.println(map);
     }
 }
