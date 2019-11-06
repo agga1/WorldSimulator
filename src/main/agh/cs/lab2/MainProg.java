@@ -4,6 +4,11 @@ import agh.cs.lab3.OptionsParser;
 import agh.cs.lab4.IWorldMap;
 import agh.cs.lab4.MapVisualizer;
 import agh.cs.lab4.RectangularMap;
+import agh.cs.lab5.Rock;
+import agh.cs.lab5.UnboundedMap;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.System.out;
 
@@ -23,5 +28,14 @@ public class MainProg {
         map.run(md);
 //        map.run(directions);
         out.println(map);
+
+        // unbounded map
+        List<Rock> rocks = new ArrayList<>();
+        rocks.add(new Rock(new Vector2d(-4,4)));
+        rocks.add(new Rock(new Vector2d(7,7)));
+        rocks.add(new Rock(new Vector2d(3,6)));
+        rocks.add(new Rock(new Vector2d(2,0)));
+
+        IWorldMap unbMap = new UnboundedMap(rocks);
     }
 }
