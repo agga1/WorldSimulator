@@ -4,13 +4,14 @@ import agh.cs.lab2.MoveDirection;
 import agh.cs.lab2.Vector2d;
 import agh.cs.lab3.Animal;
 import agh.cs.lab4.IWorldMap;
+import agh.cs.lab4.MapVisualizer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.System.out;
 
-abstract class AbstractWorldMap implements IWorldMap {
+public abstract class AbstractWorldMap implements IWorldMap {
     protected List<Animal> animals = new ArrayList<>();
     public boolean place(Animal animal){
         if(!this.canMoveTo(animal.getPosition())) return false;
@@ -47,5 +48,14 @@ abstract class AbstractWorldMap implements IWorldMap {
 
     }
 
+    @Override
+    public String toString() {
+        MapVisualizer mv = new MapVisualizer(this);
+        Vector2d[] bounds = getBounds();
+        return mv.draw(bounds[0], bounds[1]);
+
+    }
+
+   public abstract Vector2d[] getBounds();
 
 }

@@ -3,14 +3,14 @@ package agh.cs.lab4;
 import agh.cs.lab2.MoveDirection;
 import agh.cs.lab2.Vector2d;
 import agh.cs.lab3.Animal;
+import agh.cs.lab5.AbstractWorldMap;
 
 import java.util.ArrayList;
 import java.util.List;
 import static java.lang.System.out;
 
-public class RectangularMap implements IWorldMap {
+public class RectangularMap extends AbstractWorldMap {
 
-    private List<Animal> animals;
     private Vector2d upRight;
     private Vector2d lowLeft;
 
@@ -20,6 +20,7 @@ public class RectangularMap implements IWorldMap {
         this.animals = new ArrayList<>();
     }
 
+    @Override
     public boolean canMoveTo(Vector2d vector2d){
         if(vector2d.precedes(upRight) && vector2d.follows(lowLeft)) {
             return !isOccupied(vector2d);
@@ -27,46 +28,14 @@ public class RectangularMap implements IWorldMap {
         else return false;
     }
 
-    public boolean place(Animal animal){
-        if(!canMoveTo(animal.getPosition())) return false;
-        if (isOccupied(animal.getPosition())){ return false; }
-        else{
-            animals.add(animal);
-            return true;
-        }
-    }
-
-    public void run(MoveDirection[] directions){
-        int i=0;
-        int len = animals.size();
-        for(MoveDirection dir : directions){
-//            out.println("moving"+dir);
-            animals.get(i).move(dir);
-            out.println(animals.get(i).getPosition());
-            i = (i+1)%len;
-        }
-    }
-
-    public boolean isOccupied(Vector2d vector2d){
-        for(Animal animal : animals){
-            if(animal.getPosition().equals(vector2d))
-                return true;
-        }
-        return false;
-    }
-
-    public Object objectAt(Vector2d vector2d){
-        for(Animal animal : animals){
-            if(animal.getPosition().equals(vector2d))
-                return animal;
-        }
-        return null;
-
-    }
-
     @Override
     public String toString() {
         MapVisualizer mv = new MapVisualizer(this);
         return mv.draw(lowLeft, upRight);
     }
+
+    public Vector2d[] getBounds(){
+        return new Vector2d[]{lowLeft, upRight};
+    }
+
 }

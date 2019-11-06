@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1630644-ed29-482b-9917-5f3e673c82ba" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/agh/cs/lab5/AbstractWorldMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/agh/cs/lab5/UboundedMapTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab2/MainProg.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PO/agh/cs/lab2/MainProg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab4/RectangularMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PO/agh/cs/lab4/RectangularMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab5/HayStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab5/Rock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PO/agh/cs/lab5/UnboundedMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/PO/agh/cs/lab5/UboundedMapTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/PO/agh/cs/lab5/UboundedMapTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/lab2/MainProg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/lab2/MainProg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/lab4/RectangularMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/lab4/RectangularMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/lab5/HayStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/lab5/Rock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/lab5/UnboundedMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/lab5/UnboundedMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/lab5/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/lab5/Grass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/lab5/UnboundedMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/lab5/grassField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/lab5/UboundedMapTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/lab5/UboundedMapTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,36 +37,36 @@
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="38" />
+          <entry key="class" value="2" />
+          <entry key="java" value="47" />
           <entry key="js" value="1" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="38" />
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="47" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="20" />
-          <entry key="java" value="3350" />
+          <entry key="dummy" value="52" />
+          <entry key="java" value="3941" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3350" />
-          <entry key="PLAIN_TEXT" value="20" />
+          <entry key="JAVA" value="3941" />
+          <entry key="PLAIN_TEXT" value="52" />
         </counts>
       </usages-collector>
     </session>
@@ -75,13 +74,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/MainProg.java">
+        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab3/Animal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="231">
+              <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -89,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab4/MapTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="248">
+              <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,32 +95,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab3/Animal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/Rock.java">
+        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/Grass.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-              <folding>
-                <element signature="e#137#138#0" expanded="true" />
-                <element signature="e#177#178#0" expanded="true" />
-              </folding>
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/UnboundedMap.java">
+        <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/GrassField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="75" column="22" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+            <state relative-caret-position="133">
+              <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/AbstractWorldMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            <state relative-caret-position="150">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#751#752#0" expanded="true" />
@@ -147,24 +130,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab5/UboundedMapTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab4/RectangularMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+            <state relative-caret-position="201">
+              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#936#937#0" expanded="true" />
+                <element signature="e#991#992#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -221,11 +194,14 @@
         <option value="$PROJECT_DIR$/src/test/agh/cs/lab4/MapTests.java" />
         <option value="$PROJECT_DIR$/src/main/agh/cs/lab5/HayStack.java" />
         <option value="$PROJECT_DIR$/src/main/agh/cs/lab5/Rock.java" />
-        <option value="$PROJECT_DIR$/src/main/agh/cs/lab2/MainProg.java" />
-        <option value="$PROJECT_DIR$/src/main/agh/cs/lab4/RectangularMap.java" />
-        <option value="$PROJECT_DIR$/src/main/agh/cs/lab5/AbstractWorldMap.java" />
-        <option value="$PROJECT_DIR$/src/main/agh/cs/lab5/UnboundedMap.java" />
         <option value="$PROJECT_DIR$/src/test/agh/cs/lab5/UboundedMapTests.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab5/UnboundedMap.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab2/MainProg.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab5/grassField.java" />
+        <option value="$PROJECT_DIR$/src/test/agh/cs/lab5/grassFieldTests.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab5/AbstractWorldMap.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab4/RectangularMap.java" />
+        <option value="$PROJECT_DIR$/src/main/agh/cs/lab5/GrassField.java" />
       </list>
     </option>
   </component>
@@ -245,6 +221,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -365,7 +342,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -374,10 +350,12 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572958664303" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573042354750" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../poMat/programowanieObiektowe" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5505747" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -401,23 +379,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UboundedMapTests.findBoundTest">
+  <component name="RunManager" selected="JUnit.All in PO">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainProg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="agh.cs.lab2.MainProg" />
-      <module name="PO" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="agh.cs.lab2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -454,41 +418,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UboundedMapTests.findBoundTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="agh.cs.lab5.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="agh.cs.lab5" />
-      <option name="MAIN_CLASS_NAME" value="agh.cs.lab5.UboundedMapTests" />
-      <option name="METHOD_NAME" value="findBoundTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UboundedMapTests.isOccTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="agh.cs.lab5.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="agh.cs.lab5" />
-      <option name="MAIN_CLASS_NAME" value="agh.cs.lab5.UboundedMapTests" />
-      <option name="METHOD_NAME" value="isOccTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="grassFieldTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.cs.lab5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.cs.lab5" />
+      <option name="MAIN_CLASS_NAME" value="agh.cs.lab5.grassFieldTests" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="grassFieldTests.place" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.cs.lab5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.cs.lab5" />
+      <option name="MAIN_CLASS_NAME" value="agh.cs.lab5.grassFieldTests" />
+      <option name="METHOD_NAME" value="place" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="grassFieldTests.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.cs.lab5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.cs.lab5" />
+      <option name="MAIN_CLASS_NAME" value="agh.cs.lab5.grassFieldTests" />
+      <option name="METHOD_NAME" value="run" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -512,19 +491,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MapTests.canMoveToTest" />
+      <item itemvalue="JUnit.grassFieldTests" />
+      <item itemvalue="JUnit.grassFieldTests.place" />
+      <item itemvalue="JUnit.grassFieldTests.run" />
       <item itemvalue="JUnit.All in PO" />
-      <item itemvalue="Application.MainProg" />
-      <item itemvalue="JUnit.UboundedMapTests.isOccTest" />
-      <item itemvalue="JUnit.UboundedMapTests.findBoundTest" />
+      <item itemvalue="JUnit.MapTests.canMoveToTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UboundedMapTests.findBoundTest" />
-        <item itemvalue="JUnit.UboundedMapTests.isOccTest" />
         <item itemvalue="JUnit.All in PO" />
-        <item itemvalue="Application.MainProg" />
         <item itemvalue="JUnit.MapTests.canMoveToTest" />
+        <item itemvalue="JUnit.grassFieldTests" />
+        <item itemvalue="JUnit.grassFieldTests.run" />
+        <item itemvalue="JUnit.grassFieldTests.place" />
       </list>
     </recent_temporary>
   </component>
@@ -551,6 +530,7 @@
       <workItem from="1572454361983" duration="4034000" />
       <workItem from="1572459957491" duration="1976000" />
       <workItem from="1572958579226" duration="95000" />
+      <workItem from="1573036315745" duration="5876000" />
     </task>
     <task id="LOCAL-00001" summary="lab2 w tests">
       <created>1570633167480</created>
@@ -570,44 +550,45 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UboundedMapTests_isOccTest - 2019.10.30 at 18h 55m 26s.xml">
-      <configuration name="UboundedMapTests.isOccTest" configurationId="JUnit" />
+    <history-entry file="All_in_PO - 2019.11.06 at 12h 46m 22s.xml">
+      <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UboundedMapTests_isOccTest - 2019.10.30 at 18h 56m 41s.xml">
-      <configuration name="UboundedMapTests.isOccTest" configurationId="JUnit" />
+    <history-entry file="All_in_PO - 2019.11.06 at 12h 46m 37s.xml">
+      <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UboundedMapTests_isOccTest - 2019.10.30 at 18h 57m 08s.xml">
-      <configuration name="UboundedMapTests.isOccTest" configurationId="JUnit" />
+    <history-entry file="All_in_PO - 2019.11.06 at 12h 46m 51s.xml">
+      <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UboundedMapTests_isOccTest - 2019.10.30 at 18h 57m 36s.xml">
-      <configuration name="UboundedMapTests.isOccTest" configurationId="JUnit" />
+    <history-entry file="All_in_PO - 2019.11.06 at 12h 47m 01s.xml">
+      <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UboundedMapTests_isOccTest - 2019.10.30 at 18h 59m 37s.xml">
-      <configuration name="UboundedMapTests.isOccTest" configurationId="JUnit" />
+    <history-entry file="All_in_PO - 2019.11.06 at 12h 47m 11s.xml">
+      <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UboundedMapTests_findBoundTest - 2019.10.30 at 19h 26m 30s.xml">
-      <configuration name="UboundedMapTests.findBoundTest" configurationId="JUnit" />
+    <history-entry file="All_in_PO - 2019.11.06 at 12h 47m 20s.xml">
+      <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UboundedMapTests_findBoundTest - 2019.10.30 at 19h 26m 51s.xml">
-      <configuration name="UboundedMapTests.findBoundTest" configurationId="JUnit" />
+    <history-entry file="MapTests_canMoveToTest - 2019.11.06 at 12h 48m 04s.xml">
+      <configuration name="MapTests.canMoveToTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UboundedMapTests_findBoundTest - 2019.10.30 at 19h 41m 08s.xml">
-      <configuration name="UboundedMapTests.findBoundTest" configurationId="JUnit" />
+    <history-entry file="MapTests_canMoveToTest - 2019.11.06 at 12h 48m 39s.xml">
+      <configuration name="MapTests.canMoveToTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UboundedMapTests_findBoundTest - 2019.10.30 at 19h 42m 39s.xml">
-      <configuration name="UboundedMapTests.findBoundTest" configurationId="JUnit" />
+    <history-entry file="All_in_PO - 2019.11.06 at 12h 48m 45s.xml">
+      <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UboundedMapTests_findBoundTest - 2019.11.05 at 13h 57m 38s.xml">
-      <configuration name="UboundedMapTests.findBoundTest" configurationId="JUnit" />
+    <history-entry file="All_in_PO - 2019.11.06 at 12h 49m 09s.xml">
+      <configuration name="All in PO" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27076000" />
+    <option name="totallyTimeSpent" value="32952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4631579" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22753036" />
       <window_info id="Structure" order="1" weight="0.24939272" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -616,7 +597,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49959514" weight="0.3291815" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49716598" weight="0.3558719" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49716598" visible="true" weight="0.40569395" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6530249" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -624,7 +605,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3291815" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.502834" side_tool="true" weight="0.36120996" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32851985" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32740214" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
@@ -641,7 +622,7 @@
       <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32955465" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4631579" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22753036" />
       <window_info id="Structure" order="1" weight="0.24939272" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -650,7 +631,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49959514" weight="0.3291815" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49716598" visible="true" weight="0.3558719" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49716598" visible="true" weight="0.40569395" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6530249" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -658,7 +639,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3291815" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.502834" side_tool="true" weight="0.36120996" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32851985" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32740214" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
@@ -694,13 +675,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/lab3/Car.java" />
     <entry file="file://$PROJECT_DIR$/src/main/agh.cs.lab3/Car.java" />
     <entry file="file://$PROJECT_DIR$/src/agh/cs/lab3/OptionsParser.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab2/MapDirectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab4/IWorldFile.java" />
     <entry file="file://$PROJECT_DIR$/out/test/PO/agh/cs/lab3/AnimalTest.class">
       <provider selected="true" editor-type-id="text-editor" />
@@ -808,58 +782,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab2/MainProg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+        <state relative-caret-position="229">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab4/MapTests.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.13-beta-3/junit-4.13-beta-3.jar!/org/junit/internal/requests/FilterRequest.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab2/MapDirectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab3/Animal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+        <state relative-caret-position="231">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/Rock.java">
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/Grass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="e#137#138#0" expanded="true" />
-            <element signature="e#177#178#0" expanded="true" />
-          </folding>
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/AbstractWorldMap.java">
+    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab4/MapTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        <state relative-caret-position="248">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab5/UboundedMapTests.java">
+    <entry file="file://$PROJECT_DIR$/src/test/agh/cs/lab5/grassFieldTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+        <state relative-caret-position="184">
+          <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -868,18 +840,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab4/RectangularMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+        <state relative-caret-position="201">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/UnboundedMap.java">
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/AbstractWorldMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="75" column="22" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+        <state relative-caret-position="150">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab5/GrassField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
