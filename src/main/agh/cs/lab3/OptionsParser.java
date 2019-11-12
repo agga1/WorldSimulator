@@ -27,8 +27,8 @@ public class OptionsParser {
                 case "left":
                     md[i++]=MoveDirection.LEFT;
                     break;
-//                default:
-//                    throw new IllegalArgumentException(c + " is not legal move specification");
+                default:
+                    throw new IllegalArgumentException(c + " is not legal move specification");
             }
 
         }

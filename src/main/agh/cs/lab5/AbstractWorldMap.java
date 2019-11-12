@@ -38,6 +38,7 @@ public abstract class AbstractWorldMap implements IWorldMap {
         int len = animals.size();
         for(MoveDirection dir : directions){
             Animal animal = animals.get(i);
+
             animalMap.remove(animal.getPosition());
             animal.move(dir);
             animalMap.put(animal.getPosition(), animal);

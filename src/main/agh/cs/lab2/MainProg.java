@@ -20,10 +20,13 @@ public class MainProg {
             MoveDirection[] md = new OptionsParser().parse(new String[]{"f", "b", "r", "l"});
 
             map.run(md);
-            out.println(map);
+//            out.println(map);
 
             IWorldMap unbMap = new GrassField(4);
             unbMap.place(new Animal(unbMap,new Vector2d(2,2)));
+            unbMap.place(new Animal(unbMap,new Vector2d(5,10)));
+
+//            unbMap.place(new Animal(unbMap,new Vector2d(2,2)));
             unbMap.run(md);
             out.println(unbMap);
 

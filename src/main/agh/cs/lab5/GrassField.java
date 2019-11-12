@@ -9,13 +9,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Stream;
 
 public class GrassField extends AbstractWorldMap{
-    private List<Grass> grasses = new ArrayList<>();
     private Map<Vector2d, Grass> grassMap = new HashMap<>();
 
-    public GrassField(int n){ // this() wywoluje inny konstruktor tej samej klasy zeby nie powtarzac kodu
-//        this.animals = new ArrayList<>();
+    public GrassField(int n){  // this() wywoluje inny konstruktor tej samej klasy zeby nie powtarzac kodu
         for (int i = 0; i < n; i++) {
             int x, y;
             do {
@@ -24,7 +23,6 @@ public class GrassField extends AbstractWorldMap{
             } while (objectAt(new Vector2d(x, y)) instanceof Grass);
             Vector2d position = new Vector2d(x, y);
             Grass grass = new Grass(position);
-            grasses.add(grass);
             grassMap.put(position, grass);
         }
     }
@@ -38,24 +36,14 @@ public class GrassField extends AbstractWorldMap{
     @Override
     public boolean isOccupied(Vector2d vector2d){
         return animalMap.containsKey(vector2d);
-//        return (animalMap.containsKey(vector2d) || grassMap.containsKey(vector2d));
-
     }
 
     public Vector2d[] getBounds(){
         Vector2d[] bounds = new Vector2d[2];
-        bounds[0] = new Vector2d(0,0);
-        bounds[1] = new Vector2d(0,0);
-        for(Grass grass : this.grasses){
-            bounds[0] = grass.getPosition().lowerLeft(bounds[0]);
-            bounds[1] = grass.getPosition().upperRight(bounds[1]);
-        }
-        for(Animal animal: this.animals){
-            bounds[0] = animal.getPosition().lowerLeft(bounds[0]);
-            bounds[1] = animal.getPosition().upperRight(bounds[1]);
-        }
+        bounds[0] = Stream.concat(grassMap.keySet().stream(), animalMap.keySet().stream()).reduce(Vector2d::lowerLeft).orElseGet(() -> new Vector2d(0, 0));
+        bounds[1] = Stream.concat(grassMap.keySet().stream(), animalMap.keySet().stream()).reduce(Vector2d::upperRight).orElseGet(() -> new Vector2d(0, 0));
+
         return bounds;
     }
-
 
 }
