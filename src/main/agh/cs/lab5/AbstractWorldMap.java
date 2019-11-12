@@ -18,8 +18,7 @@ public abstract class AbstractWorldMap implements IWorldMap {
     protected List<Animal> animals = new ArrayList<>();
     public boolean place(Animal animal) throws IllegalArgumentException{
         if (this.isOccupied(animal.getPosition())){
-//            throw new IllegalArgumentException(animal.getPosition() + " is already Occupied");
-            return false;
+            throw new IllegalArgumentException(animal.getPosition() + " is already Occupied");
         }
         if(!this.canMoveTo(animal.getPosition())) return false;
         animals.add(animal);
