@@ -6,7 +6,7 @@ import java.util.Arrays;
 import static java.lang.System.out;
 
 public class OptionsParser {
-    public MoveDirection[] parse(String ar[]){
+    public MoveDirection[] parse(String ar[]) throws IllegalArgumentException{
         MoveDirection md[] = new MoveDirection[ar.length];
         int i = 0;
         for(String c:ar){
@@ -26,7 +26,11 @@ public class OptionsParser {
                 case "l":
                 case "left":
                     md[i++]=MoveDirection.LEFT;
+                    break;
+//                default:
+//                    throw new IllegalArgumentException(c + " is not legal move specification");
             }
+
         }
         return Arrays.copyOf(md, i);
     }

@@ -5,8 +5,9 @@ import agh.cs.lab2.MapDirection;
 import agh.cs.lab2.Vector2d;
 import agh.cs.lab2.MoveDirection;
 import agh.cs.lab4.IWorldMap;
+import agh.cs.lab5.IMapElement;
 
-public class Animal {
+public class Animal implements IMapElement {
     private MapDirection direction;
     private Vector2d vector2d;
     private IWorldMap map;

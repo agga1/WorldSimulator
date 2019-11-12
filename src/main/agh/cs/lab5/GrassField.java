@@ -5,15 +5,17 @@ import agh.cs.lab3.Animal;
 import agh.cs.lab4.MapVisualizer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GrassField extends AbstractWorldMap{
     private List<Grass> grasses = new ArrayList<>();
-    private Vector2d[] boundaries;
+    private Map<Vector2d, Grass> grassMap = new HashMap<>();
 
     public GrassField(int n){ // this() wywoluje inny konstruktor tej samej klasy zeby nie powtarzac kodu
-        this.animals = new ArrayList<>();
+//        this.animals = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             int x, y;
             do {
@@ -21,35 +23,23 @@ public class GrassField extends AbstractWorldMap{
                 y = ThreadLocalRandom.current().nextInt(0, (int) Math.sqrt(n * 10));
             } while (objectAt(new Vector2d(x, y)) instanceof Grass);
             Vector2d position = new Vector2d(x, y);
-            grasses.add(new Grass(position));
-
+            Grass grass = new Grass(position);
+            grasses.add(grass);
+            grassMap.put(position, grass);
         }
-        this.boundaries = getBounds();
     }
 
     @Override
     public Object objectAt(Vector2d vector2d){
         Object animal = super.objectAt(vector2d);
         if(animal != null) return animal;
-        for(Grass grass : grasses){
-            if(grass.getPosition().equals(vector2d))
-                return grass;
-        }
-        return null;
+        return grassMap.get(vector2d);
     }
     @Override
     public boolean isOccupied(Vector2d vector2d){
-        for(Animal animal : animals){
-            if(animal.getPosition().equals(vector2d))
-                return true;
-        }
-        return false;
-    }
+        return animalMap.containsKey(vector2d);
+//        return (animalMap.containsKey(vector2d) || grassMap.containsKey(vector2d));
 
-    public String toString(){
-        MapVisualizer mv = new MapVisualizer(this);
-        this.boundaries = getBounds();
-        return mv.draw(this.boundaries[0], this.boundaries[1]);
     }
 
     public Vector2d[] getBounds(){

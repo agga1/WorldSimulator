@@ -7,19 +7,24 @@ import agh.cs.lab4.IWorldMap;
 import agh.cs.lab4.MapVisualizer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static java.lang.System.out;
 
 public abstract class AbstractWorldMap implements IWorldMap {
+    protected Map<Vector2d, Animal> animalMap= new HashMap<>();
     protected List<Animal> animals = new ArrayList<>();
-    public boolean place(Animal animal){
-        if(!this.canMoveTo(animal.getPosition())) return false;
-        if (this.isOccupied(animal.getPosition())){ return false; }
-        else{
-            animals.add(animal);
-            return true;
+    public boolean place(Animal animal) throws IllegalArgumentException{
+        if (this.isOccupied(animal.getPosition())){
+//            throw new IllegalArgumentException(animal.getPosition() + " is already Occupied");
+            return false;
         }
+        if(!this.canMoveTo(animal.getPosition())) return false;
+        animals.add(animal);
+        animalMap.put(animal.getPosition(), animal);
+        return true;
     }
     public boolean canMoveTo(Vector2d vector2d){
         return !this.isOccupied(vector2d);
@@ -33,19 +38,17 @@ public abstract class AbstractWorldMap implements IWorldMap {
         int i=0;
         int len = animals.size();
         for(MoveDirection dir : directions){
-            animals.get(i).move(dir);
-            out.println(animals.get(i).getPosition());
+            Animal animal = animals.get(i);
+            animalMap.remove(animal.getPosition());
+            animal.move(dir);
+            animalMap.put(animal.getPosition(), animal);
+
             i = (i+1)%len;
         }
     }
 
     public Object objectAt(Vector2d vector2d){
-        for(Animal animal : animals){
-            if(animal.getPosition().equals(vector2d))
-                return animal;
-        }
-        return null;
-
+        return animalMap.get(vector2d);
     }
 
     @Override
@@ -55,7 +58,6 @@ public abstract class AbstractWorldMap implements IWorldMap {
         return mv.draw(bounds[0], bounds[1]);
 
     }
-
    public abstract Vector2d[] getBounds();
 
 }

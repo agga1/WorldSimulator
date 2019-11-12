@@ -2,7 +2,7 @@ package agh.cs.lab5;
 
 import agh.cs.lab2.Vector2d;
 
-public class Grass {
+public class Grass implements IMapElement{
     private Vector2d position;
     public Grass(Vector2d position){
         this.position = position;
@@ -12,6 +12,6 @@ public class Grass {
         return position;
     }
     public String toString(){
-        return "r";
+        return "*";
     }
 }

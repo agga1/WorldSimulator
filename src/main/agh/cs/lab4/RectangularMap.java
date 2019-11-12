@@ -17,7 +17,7 @@ public class RectangularMap extends AbstractWorldMap {
     public RectangularMap(int width, int height){
         upRight = new Vector2d(width, height);
         lowLeft = new Vector2d(0,0);
-        this.animals = new ArrayList<>();
+//        this.animals = new ArrayList<>();
     }
 
     @Override

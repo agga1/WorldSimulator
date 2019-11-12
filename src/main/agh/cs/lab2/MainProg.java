@@ -9,22 +9,27 @@ import static java.lang.System.out;
 
 public class MainProg {
     public static void main(String[] args) {
-        MoveDirection[] directions = new OptionsParser().parse(args);
-        IWorldMap map = new RectangularMap(10, 5);
+        try{
+            MoveDirection[] directions = new OptionsParser().parse(args);
+            IWorldMap map = new RectangularMap(10, 5);
 //        out.println(map.place(new Animal(map)));
 //        out.println(map.place(new Animal(map,new Vector2d(3,4))));
 //        out.println(map.place(new Animal(map,new Vector2d(4,4))));
-        out.println(map.place(new Animal(map,new Vector2d(2,2))));
-        out.println(map.place(new Animal(map,new Vector2d(3,2))));
-        MoveDirection[] md = new MoveDirection[2];
-        md[0] = MoveDirection.FORWARD;
-        md[1] = MoveDirection.FORWARD;
+            out.println(map.place(new Animal(map,new Vector2d(2,2))));
+            out.println(map.place(new Animal(map,new Vector2d(3,2))));
+            MoveDirection[] md = new OptionsParser().parse(new String[]{"f", "b", "r", "l"});
 
-        map.run(md);
-//        map.run(directions);
-        out.println(map);
+            map.run(md);
+            out.println(map);
 
-        // unbounded
-        IWorldMap unbMap = new GrassField(4);
+            IWorldMap unbMap = new GrassField(4);
+            unbMap.place(new Animal(unbMap,new Vector2d(2,2)));
+            unbMap.run(md);
+            out.println(unbMap);
+
+        }catch(IllegalArgumentException e){
+            out.println(e);
+        }
+
     }
 }
