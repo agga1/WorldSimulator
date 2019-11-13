@@ -35,11 +35,10 @@ class GrassFieldTest {
         @Test
         void place() {
             Animal a1 = new Animal(map, new Vector2d(-4, -5));
-            Animal a2 = new Animal(map, new Vector2d(-4, -5));
             assertTrue(map.place(a1));
-            assertFalse(map.place(a2));
 
         }
+        
         @Test
         void run() {
             Animal a1 = new Animal(map);
