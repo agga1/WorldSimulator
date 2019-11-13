@@ -6,9 +6,13 @@ import agh.cs.lab2.Vector2d;
 import agh.cs.lab2.MoveDirection;
 import agh.cs.lab4.IWorldMap;
 import agh.cs.lab5.IMapElement;
+import agh.cs.lab7.IPositionChangeObserver;
+
+import java.util.List;
 
 public class Animal implements IMapElement {
     private MapDirection direction;
+    private List<IPositionChangeObserver> observers;
     private Vector2d vector2d;
     private IWorldMap map;
 
@@ -28,13 +32,20 @@ public class Animal implements IMapElement {
         this.map = map;
         this.vector2d = initialPos;
     }
-/*
-    @Override
-    public String toString() {
-        return "zorientowany na " + direction + ", o wspolrzednych " + vector2d;
+
+    void addObserver(IPositionChangeObserver observer){
+        observers.add(observer);
     }
-    */
+    void removeObserver(IPositionChangeObserver observer){
+        observers.remove(observer);
+    }
+    void positionChanged(Vector2d oldPosition, Vector2d newPosition){
+        for(IPositionChangeObserver observer : observers){
+            observer.positionChanged(oldPosition, newPosition);
+        }
+    }
     public void move(MoveDirection direction){
+        vector2d 
         switch (direction){
             case RIGHT:
                 this.direction = this.direction.next();

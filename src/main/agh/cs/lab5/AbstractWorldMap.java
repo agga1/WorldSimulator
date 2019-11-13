@@ -5,6 +5,7 @@ import agh.cs.lab2.Vector2d;
 import agh.cs.lab3.Animal;
 import agh.cs.lab4.IWorldMap;
 import agh.cs.lab4.MapVisualizer;
+import agh.cs.lab7.IPositionChangeObserver;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +14,7 @@ import java.util.Map;
 
 import static java.lang.System.out;
 
-public abstract class AbstractWorldMap implements IWorldMap {
+public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver {
     protected Map<Vector2d, Animal> animalMap= new HashMap<>();
     protected List<Animal> animals = new ArrayList<>();
     public boolean place(Animal animal) throws IllegalArgumentException{
@@ -59,5 +60,10 @@ public abstract class AbstractWorldMap implements IWorldMap {
 
     }
    public abstract Vector2d[] getBounds();
+    public void positionChanged(Vector2d oldPosition, Vector2d newPosition){
+        Animal animal = animalMap.get(oldPosition);
+        animalMap.remove(oldPosition);
+        animalMap.put(newPosition, animal);
+    }
 
 }
