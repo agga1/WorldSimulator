@@ -38,7 +38,7 @@ class GrassFieldTest {
             assertTrue(map.place(a1));
 
         }
-        
+
         @Test
         void run() {
             Animal a1 = new Animal(map);
