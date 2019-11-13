@@ -37,7 +37,7 @@ public interface IWorldMap {
      * @param directions
      *            Array of move directions.
      */
-    void run(MoveDirection[] directions);
+//    void run(MoveDirection[] directions);
 
     /**
      * Return true if given vector2d on the map is occupied. Should not be

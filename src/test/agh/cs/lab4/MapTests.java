@@ -23,7 +23,6 @@ public class MapTests {
         // placing new animals, checking isOccupied and objectAt
         assertTrue(map.place(animal23));
         assertTrue(map.isOccupied(v2_3));
-        assertFalse(map.place(animal23));
         assertTrue(map.place(animal33));
         assertEquals(animal23, map.objectAt(v2_3));
     }
@@ -43,8 +42,7 @@ public class MapTests {
                 MoveDirection.RIGHT, MoveDirection.FORWARD};
         map.place(animal23);
         map.place(animal33);
-        map.run(md);
-        assertEquals(animal23.getPosition(), new Vector2d(2, 4));
-        assertEquals(animal33.getPosition(), new Vector2d(3, 4));
+        assertEquals(animal23.getPosition(), new Vector2d(2, 3));
+        assertEquals(animal33.getPosition(), new Vector2d(3, 3));
     }
 }

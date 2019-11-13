@@ -33,7 +33,7 @@ public class Animal implements IMapElement {
         this.vector2d = initialPos;
     }
 
-    void addObserver(IPositionChangeObserver observer){
+    public void addObserver(IPositionChangeObserver observer){
         observers.add(observer);
     }
     void removeObserver(IPositionChangeObserver observer){
@@ -45,7 +45,7 @@ public class Animal implements IMapElement {
         }
     }
     public void move(MoveDirection direction){
-        vector2d 
+        Vector2d oldPosition = this.vector2d;
         switch (direction){
             case RIGHT:
                 this.direction = this.direction.next();
@@ -59,11 +59,13 @@ public class Animal implements IMapElement {
                     return;
                 }
                 this.vector2d = newPos;
+                this.positionChanged(oldPosition, newPos);
                 break;
             case BACKWARD:
                 newPos = this.vector2d.subtract(this.direction.toUnitVector());
                 if (!map.canMoveTo(newPos)) return;
                 this.vector2d = newPos;
+                this.positionChanged(oldPosition, newPos);
                 break;
         }
     }

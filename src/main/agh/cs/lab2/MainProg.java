@@ -4,6 +4,7 @@ import agh.cs.lab3.OptionsParser;
 import agh.cs.lab4.IWorldMap;
 import agh.cs.lab4.RectangularMap;
 import agh.cs.lab5.GrassField;
+import agh.cs.lab7.IPositionChangeObserver;
 
 import static java.lang.System.out;
 
@@ -12,14 +13,15 @@ public class MainProg {
         try{
             MoveDirection[] directions = new OptionsParser().parse(args);
             IWorldMap map = new RectangularMap(10, 5);
-//        out.println(map.place(new Animal(map)));
-//        out.println(map.place(new Animal(map,new Vector2d(3,4))));
-//        out.println(map.place(new Animal(map,new Vector2d(4,4))));
-            out.println(map.place(new Animal(map,new Vector2d(2,2))));
-            out.println(map.place(new Animal(map,new Vector2d(3,2))));
+            Animal animal1 = new Animal(map,new Vector2d(2,2));
+            Animal animal2= new Animal(map,new Vector2d(4,3));
+            animal1.addObserver((IPositionChangeObserver) map);
+            animal2.addObserver((IPositionChangeObserver) map);
+
+            map.place(animal1);
+            map.place(animal2);
             MoveDirection[] md = new OptionsParser().parse(new String[]{"f", "b", "r", "l"});
 
-            map.run(md);
 //            out.println(map);
 
             IWorldMap unbMap = new GrassField(4);
@@ -27,7 +29,6 @@ public class MainProg {
             unbMap.place(new Animal(unbMap,new Vector2d(5,10)));
 
 //            unbMap.place(new Animal(unbMap,new Vector2d(2,2)));
-            unbMap.run(md);
             out.println(unbMap);
 
         }catch(IllegalArgumentException e){
