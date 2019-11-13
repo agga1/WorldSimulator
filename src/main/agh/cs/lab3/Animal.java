@@ -8,13 +8,15 @@ import agh.cs.lab4.IWorldMap;
 import agh.cs.lab5.IMapElement;
 import agh.cs.lab7.IPositionChangeObserver;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Animal implements IMapElement {
     private MapDirection direction;
-    private List<IPositionChangeObserver> observers;
     private Vector2d vector2d;
     private IWorldMap map;
+    private Set<IPositionChangeObserver> observers = new HashSet<>();
 
     public Animal() {
         this.direction = MapDirection.NORTH;
@@ -31,6 +33,7 @@ public class Animal implements IMapElement {
         this.direction = MapDirection.NORTH;
         this.map = map;
         this.vector2d = initialPos;
+        addObserver(map);
     }
 
     public void addObserver(IPositionChangeObserver observer){

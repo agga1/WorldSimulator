@@ -3,6 +3,7 @@ package agh.cs.lab5;
 import agh.cs.lab2.Vector2d;
 import agh.cs.lab3.Animal;
 import agh.cs.lab4.MapVisualizer;
+import agh.cs.lab7.MapBoundary;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,8 +14,8 @@ import java.util.stream.Stream;
 
 public class GrassField extends AbstractWorldMap{
     private Map<Vector2d, Grass> grassMap = new HashMap<>();
-
-    public GrassField(int n){  // this() wywoluje inny konstruktor tej samej klasy zeby nie powtarzac kodu
+    private MapBoundary mapBoundary;
+    private void generateGrass(int n){
         for (int i = 0; i < n; i++) {
             int x, y;
             do {
@@ -25,6 +26,10 @@ public class GrassField extends AbstractWorldMap{
             Grass grass = new Grass(position);
             grassMap.put(position, grass);
         }
+    }
+    public GrassField(int n){  // this() wywoluje inny konstruktor tej samej klasy zeby nie powtarzac kodu
+        this.mapBoundary = new MapBoundary();
+        generateGrass(n);
     }
 
     @Override

@@ -15,11 +15,12 @@ public class MainProg {
             IWorldMap map = new RectangularMap(10, 5);
             Animal animal1 = new Animal(map,new Vector2d(2,2));
             Animal animal2= new Animal(map,new Vector2d(4,3));
-            animal1.addObserver((IPositionChangeObserver) map);
-            animal2.addObserver((IPositionChangeObserver) map);
 
             map.place(animal1);
             map.place(animal2);
+            animal1.move(MoveDirection.LEFT);
+            animal1.move(MoveDirection.FORWARD);
+            out.println(map);
             MoveDirection[] md = new OptionsParser().parse(new String[]{"f", "b", "r", "l"});
 
 //            out.println(map);

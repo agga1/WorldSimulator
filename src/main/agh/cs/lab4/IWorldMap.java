@@ -3,6 +3,7 @@ package agh.cs.lab4;
 import agh.cs.lab2.MoveDirection;
 import agh.cs.lab2.Vector2d;
 import agh.cs.lab3.Animal;
+import agh.cs.lab7.IPositionChangeObserver;
 
 /**
  * The interface responsible for interacting with the map of the world.
@@ -11,7 +12,7 @@ import agh.cs.lab3.Animal;
  * @author apohllo
  *
  */
-public interface IWorldMap {
+public interface IWorldMap extends IPositionChangeObserver {
     /**
      * Indicate if any object can move to the given vector2d.
      *
