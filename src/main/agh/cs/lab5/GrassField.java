@@ -31,6 +31,10 @@ public class GrassField extends AbstractWorldMap{
         this.mapBoundary = new MapBoundary();
         generateGrass(n);
     }
+    public GrassField(int n, MapBoundary mapBoundary){  // this() wywoluje inny konstruktor tej samej klasy zeby nie powtarzac kodu
+        this.mapBoundary = mapBoundary;
+        generateGrass(n);
+    }
 
     @Override
     public Object objectAt(Vector2d vector2d){
