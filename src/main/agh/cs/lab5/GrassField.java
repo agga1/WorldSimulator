@@ -47,11 +47,21 @@ public class GrassField extends AbstractWorldMap{
         return animalMap.containsKey(vector2d);
     }
 
+    @Override
+    public boolean place(Animal animal) throws IllegalArgumentException {
+        if (super.place(animal)) {
+            mapBoundary.addPosition(animal.getPosition());
+            animal.addObserver(mapBoundary);
+        }
+        return true;
+    }
+
     public Vector2d[] getBounds(){
         Vector2d[] bounds = new Vector2d[2];
-        bounds[0] = Stream.concat(grassMap.keySet().stream(), animalMap.keySet().stream()).reduce(Vector2d::lowerLeft).orElseGet(() -> new Vector2d(0, 0));
-        bounds[1] = Stream.concat(grassMap.keySet().stream(), animalMap.keySet().stream()).reduce(Vector2d::upperRight).orElseGet(() -> new Vector2d(0, 0));
-
+//        bounds[0] = Stream.concat(grassMap.keySet().stream(), animalMap.keySet().stream()).reduce(Vector2d::lowerLeft).orElseGet(() -> new Vector2d(0, 0));
+//        bounds[1] = Stream.concat(grassMap.keySet().stream(), animalMap.keySet().stream()).reduce(Vector2d::upperRight).orElseGet(() -> new Vector2d(0, 0));
+        bounds[0] = mapBoundary.getLowerLeft();
+        bounds[1] = mapBoundary.getUpperRight();
         return bounds;
     }
 

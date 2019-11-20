@@ -34,19 +34,19 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
         return (objectAt(vector2d) != null);
     }
 
-//    public void run(MoveDirection[] directions){
-//        int i=0;
-//        int len = animals.size();
-//        for(MoveDirection dir : directions){
-//            Animal animal = animals.get(i);
-//
-//            animalMap.remove(animal.getPosition());
-//            animal.move(dir);
-//            animalMap.put(animal.getPosition(), animal);
-//
-//            i = (i+1)%len;
-//        }
-//    }
+    public void run(MoveDirection[] directions){
+        int i=0;
+        int len = animals.size();
+        for(MoveDirection dir : directions){
+            Animal animal = animals.get(i);
+
+            animalMap.remove(animal.getPosition());
+            animal.move(dir);
+            animalMap.put(animal.getPosition(), animal);
+
+            i = (i+1)%len;
+        }
+    }
 
     public Object objectAt(Vector2d vector2d){
         return animalMap.get(vector2d);
