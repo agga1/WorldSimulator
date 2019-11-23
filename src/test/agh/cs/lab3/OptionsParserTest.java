@@ -1,14 +1,10 @@
 package agh.cs.lab3;
 
-import agh.cs.lab2.MapDirection;
 import agh.cs.lab2.MoveDirection;
-import org.junit.Test;
 
 import java.util.Arrays;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OptionsParserTest {
     private MoveDirection[] md1 = {MoveDirection.BACKWARD, MoveDirection.FORWARD, MoveDirection.LEFT, MoveDirection.RIGHT};

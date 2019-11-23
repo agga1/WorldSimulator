@@ -2,6 +2,7 @@ package agh.cs.lab2;
 
 import java.util.Objects;
 
+import static java.lang.Math.abs;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
@@ -55,6 +56,21 @@ public class Vector2d {
         return new Vector2d((-1) * this.x, (-1) * this.y);
     }
 
+    public Vector2d wrapAroundMap(Vector2d lowerLeft, Vector2d upperRight) {
+        int newX  = this.x;
+        int newY = this.y;
+        if (this.x > upperRight.x){ newX = lowerLeft.x; }
+        else if(this.x < lowerLeft.x){ newX = upperRight.x; }
+        if (this.y > upperRight.y){ newY = lowerLeft.y; }
+        else if(this.y < lowerLeft.y){ newY = upperRight.y; }
+        return new Vector2d(newX, newY);
+    }
+
+    public int surface(Vector2d other){
+        int width = abs(this.x - other.x);
+        int height = abs(this.y- other.y);
+        return width*height;
+    }
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
