@@ -17,7 +17,7 @@ public class MapTests {
     private Animal animal33 = new Animal(map, v3_3);
     @Test
     public void placingTest(){
-        // placing new animals, checking isOccupied and objectAt
+        // placing new animals, checking isOccupied and animalsAt
         assertTrue(map.place(animal23));
         assertTrue(map.isOccupied(v2_3));
         assertTrue(map.place(animal33));

@@ -29,7 +29,9 @@ public class WorldMapTest {
     @Test
     public void generateGrassTest(){
         Vector2d animalPos = new Vector2d(3,3);
-        Animal animal2 = new Animal(worldMap, animalPos);
-
+        JungleAnimal animal2 = new JungleAnimal(worldMap, animalPos);
+        worldMap.place(animal2);
+        assertTrue(worldMap.generateGrass(ll, ur));
+        assertFalse(worldMap.generateGrass(animalPos, animalPos));
     }
 }

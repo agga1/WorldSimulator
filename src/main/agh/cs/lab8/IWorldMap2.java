@@ -1,4 +1,4 @@
-package agh.cs.lab4;
+package agh.cs.lab8;
 
 import agh.cs.lab2.MoveDirection;
 import agh.cs.lab2.Vector2d;
@@ -13,7 +13,7 @@ import agh.cs.lab8.JungleAnimal;
  * @author apohllo
  *
  */
-public interface IWorldMap extends IPositionChangeObserver {
+public interface IWorldMap2 extends IPositionChangeObserver {
     /**
      * Indicate if any object can move to the given vector2d.
      *
@@ -29,7 +29,7 @@ public interface IWorldMap extends IPositionChangeObserver {
      *            The car to place on the map.
      * @return True if the car was placed. The car cannot be placed if the map is already occupied.
      */
-    boolean place(Animal animal);
+    boolean place(JungleAnimal animal);
 
     /**
      * Move the cars on the map according to the provided move directions. Every

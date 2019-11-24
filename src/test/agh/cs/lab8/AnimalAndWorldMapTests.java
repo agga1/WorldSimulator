@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AnimalAndWorldMapTests {
     private WorldMap worldMap;
-    private Animal animal;
+    private JungleAnimal animal;
     Vector2d ll = new Vector2d(0,0);
     Vector2d ur = new Vector2d(10, 10);
     Vector2d jll = new Vector2d(5,5);
@@ -21,15 +21,19 @@ public class AnimalAndWorldMapTests {
     @BeforeEach
     public void setup(){
         this.worldMap = new WorldMap(ll, ur, jll, jur);
-        this.animal = new Animal(worldMap, startPos);
+        this.animal = new JungleAnimal(worldMap, startPos);
     }
 
     @Test
     public void placeTest(){
         assertEquals(animal.getPosition(), startPos);
-        Animal animal2 = new Animal(worldMap, ll.subtract(new Vector2d(1, 0)));
-        Animal animal3 = new Animal(worldMap, startPos);
-        assertTrue(worldMap.place(animal3)); // because 2 animals can occupy the same space
-        assertThrows(IllegalArgumentException.class, () -> worldMap.place(animal2));
+        JungleAnimal animal2 = new JungleAnimal(worldMap, startPos);
+        JungleAnimal animal3 = new JungleAnimal(worldMap, startPos);
+        JungleAnimal animal4 = new JungleAnimal(worldMap, ll.subtract(new Vector2d(1, 0)));
+        assertTrue(worldMap.place(animal));
+        assertTrue(worldMap.place(animal2)); // because 2 animals can occupy the same space
+        assertFalse(worldMap.place(animal3)); // 3rd animal on the same pos is illegal
+
+        assertThrows(IllegalArgumentException.class, () -> worldMap.place(animal4));
     }
 }
