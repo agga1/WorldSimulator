@@ -1,6 +1,6 @@
-package agh.cs.lab7;
+package agh.cs.map;
 
-import agh.cs.lab2.Vector2d;
+import agh.cs.vectors.Vector2d;
 
 import java.util.Comparator;
 import java.util.TreeSet;

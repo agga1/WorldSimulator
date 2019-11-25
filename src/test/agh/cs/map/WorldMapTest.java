@@ -1,9 +1,10 @@
-package agh.cs.lab8;
+package agh.cs.map;
 
-import agh.cs.lab3.Animal;
+import agh.cs.map.WorldMap;
+import agh.cs.mapelements.JungleAnimal;
+import agh.cs.vectors.Vector2d;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import agh.cs.lab2.Vector2d;
 
 import static org.junit.jupiter.api.Assertions.*;
 

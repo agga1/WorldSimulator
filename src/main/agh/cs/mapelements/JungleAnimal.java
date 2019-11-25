@@ -1,13 +1,9 @@
-package agh.cs.lab8;
+package agh.cs.mapelements;
 
-import agh.cs.lab2.MapDirection;
-import agh.cs.lab2.MoveDirection;
-import agh.cs.lab2.Vector2d;
-import agh.cs.lab3.Animal;
-import agh.cs.lab4.IWorldMap;
-import agh.cs.lab5.Grass;
-import agh.cs.lab5.IMapElement;
-import agh.cs.lab7.IPositionChangeObserver;
+import agh.cs.map.IPositionChangeObserver;
+import agh.cs.map.IWorldMap;
+import agh.cs.vectors.Orientation;
+import agh.cs.vectors.Vector2d;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -20,7 +16,7 @@ public class JungleAnimal {
     private Vector2d position;
     private int[] genes;
     private int energy;
-    private IWorldMap2 map;
+    private IWorldMap map;
     private Set<IPositionChangeObserver> observers = new HashSet<>();
 
     private static int[] createRandomGenes(){
@@ -43,10 +39,10 @@ public class JungleAnimal {
         Arrays.sort(genes);
         return genes;
     }
-    public JungleAnimal(IWorldMap2 map, Vector2d initialPos) { // TODO make builder?
+    public JungleAnimal(IWorldMap map, Vector2d initialPos) { // TODO make builder?
         this(map, initialPos, createRandomGenes(), minEnergy*2);
     }
-    public JungleAnimal(IWorldMap2 map, Vector2d initialPos, int[] genes, int energy) {
+    public JungleAnimal(IWorldMap map, Vector2d initialPos, int[] genes, int energy) {
         this.map = map;
         this.position = initialPos;
         this.genes = genes;

@@ -1,10 +1,7 @@
-package agh.cs.lab4;
+package agh.cs.map;
 
-import agh.cs.lab2.MoveDirection;
-import agh.cs.lab2.Vector2d;
-import agh.cs.lab3.Animal;
-import agh.cs.lab7.IPositionChangeObserver;
-import agh.cs.lab8.JungleAnimal;
+import agh.cs.vectors.Vector2d;
+import agh.cs.mapelements.JungleAnimal;
 
 /**
  * The interface responsible for interacting with the map of the world.
@@ -29,7 +26,7 @@ public interface IWorldMap extends IPositionChangeObserver {
      *            The car to place on the map.
      * @return True if the car was placed. The car cannot be placed if the map is already occupied.
      */
-    boolean place(Animal animal);
+    boolean place(JungleAnimal animal);
 
     /**
      * Move the cars on the map according to the provided move directions. Every

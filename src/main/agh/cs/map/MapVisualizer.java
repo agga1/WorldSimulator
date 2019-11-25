@@ -1,6 +1,6 @@
-package agh.cs.lab4;
+package agh.cs.map;
 
-import agh.cs.lab2.Vector2d;
+import agh.cs.vectors.Vector2d;
 
 /**
  * The map visualizer converts the {@link IWorldMap} map into a string

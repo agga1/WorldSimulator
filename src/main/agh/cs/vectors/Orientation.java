@@ -1,6 +1,4 @@
-package agh.cs.lab8;
-
-import agh.cs.lab2.Vector2d;
+package agh.cs.vectors;
 
 import java.util.HashMap;
 import java.util.Map;

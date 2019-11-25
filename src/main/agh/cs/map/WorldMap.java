@@ -1,8 +1,8 @@
-package agh.cs.lab8;
+package agh.cs.map;
 
-import agh.cs.lab2.Vector2d;
-import agh.cs.lab5.Grass;
-import agh.cs.lab7.MapBoundary;
+import agh.cs.vectors.Vector2d;
+import agh.cs.mapelements.Grass;
+import agh.cs.mapelements.JungleAnimal;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class WorldMap implements IWorldMap2 {
+public class WorldMap implements IWorldMap {
     private Vector2d upperRight;
     private Vector2d lowerLeft;
     private Vector2d jungleLowerLeft;
