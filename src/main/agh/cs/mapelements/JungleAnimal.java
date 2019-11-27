@@ -59,7 +59,6 @@ public class JungleAnimal {
         Vector2d newPosition = this.position
                 .add(this.orientation.toUnitVector())
                 .mapToBoundaries(this.map.getBoundaries());
-        System.out.println(newPosition);
         if(map.canMoveTo(newPosition)){
             this.position = newPosition;
             this.positionChanged(oldPosition, this.position);

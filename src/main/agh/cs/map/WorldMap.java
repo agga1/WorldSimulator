@@ -1,5 +1,6 @@
 package agh.cs.map;
 
+import agh.cs.AnimalHashMap;
 import agh.cs.vectors.Vector2d;
 import agh.cs.mapelements.Grass;
 import agh.cs.mapelements.JungleAnimal;
@@ -16,16 +17,16 @@ public class WorldMap implements IWorldMap {
     private Vector2d jungleLowerLeft;
     private Vector2d jungleUpperRight;
     private Map<Vector2d, Grass> grassMap = new HashMap<>();
-    private Map<Vector2d, List<JungleAnimal>> animalMap= new HashMap<>();
+    private AnimalHashMap animalMap = new AnimalHashMap();
     private List<JungleAnimal> animals = new ArrayList<>();
     private MapVisualizer mapVisualizer = new MapVisualizer(this);
     private int day = 0;
 
-    public WorldMap(Vector2d lowerLeft, Vector2d upperRight, Vector2d jungleLowerLeft, Vector2d jungleUpperRight){
-        this.lowerLeft = lowerLeft;
-        this.upperRight = upperRight;
-        this.jungleLowerLeft = jungleLowerLeft;
-        this.jungleUpperRight = jungleUpperRight;
+    public WorldMap(int width,int height, double jungleRatio){
+        this.lowerLeft = new Vector2d(0, 0);
+        this.upperRight = new Vector2d(width-1, height-1);
+        this.jungleLowerLeft = new Vector2d((int) Math.floor(jungleRatio * width-1), (int) Math.floor(jungleRatio * height-1));
+        this.jungleUpperRight = new Vector2d((int) Math.ceil(jungleRatio * width-1), (int) Math.ceil(jungleRatio * height-1));
         if (!lowerLeft.precedes(jungleLowerLeft)) {
             throw new IllegalArgumentException("Jungle lower left corner can't precede map lower left corner");
         }
@@ -35,14 +36,11 @@ public class WorldMap implements IWorldMap {
     }
 
     public boolean place(JungleAnimal animal) throws IllegalArgumentException{
-        if(animalMap.containsKey(animal.getPosition()) && animalMap.get(animal.getPosition()).size() > 3){
-            return false; // TODO can be deleted
-        }
         if (!this.lowerLeft.precedes(animal.getPosition()) || !this.upperRight.follows(animal.getPosition())){
             throw new IllegalArgumentException(animal.getPosition() + " is outside map! ");
         }
         animals.add(animal);
-        addAnimalToMap(animal);
+        animalMap.addAnimal(animal);
         return true;
     }
 
@@ -71,8 +69,7 @@ public class WorldMap implements IWorldMap {
     }
     @Override
     public boolean canMoveTo(Vector2d pos){
-        List<JungleAnimal> animalsAtPos = animalMap.get(pos);
-        return animalsAtPos==null || animalsAtPos.size() < 2; // animal can move anywhere where there are less than 2 animals
+        return true; // no restrictions
     }
 
     public Object objectAt(Vector2d vector2d){ // returns any object
@@ -83,22 +80,15 @@ public class WorldMap implements IWorldMap {
 
     public void run() throws InterruptedException{
         // remove dead remains
-        try{
-            for(JungleAnimal animal : animals){
-                if(animal.isDead())
-                    this.removeDeadAnimal(animal);
-            }
-        }catch(Exception e){
-            System.out.println(" cant remove");
-        }
-
-
-//        move all animals
+        for(int i=0;i<animals.size();i++)
+            if(animals.get(i).isDead())
+                this.removeDeadAnimal(animals.get(i));
+        // move all animals
         animals.forEach(JungleAnimal::move);
         // eat grass
         // add new grass
         addGrassOnJungle();
-        visualise(1000);
+        visualise(300);
     }
 
     void visualise(int timeout) throws InterruptedException {
@@ -124,28 +114,18 @@ public class WorldMap implements IWorldMap {
         grassMap.remove(grass.getPosition());
     }
 
-    private void removeDeadAnimal(JungleAnimal animal){
-        Vector2d pos = animal.getPosition();
-        this.animalMap.get(pos).remove(animal);
-//        if(this.animalMap.get(pos).isEmpty()) // remove list if empty TODO or leave and change isOccupied
-//            this.animalMap.remove(pos);
-        this.animals.remove(animal);
-    }
     public boolean isOccupied(Vector2d vector2d){
         return (objectAt(vector2d) != null);
     }
 
     public void positionChanged(JungleAnimal animal, Vector2d oldPosition){
-            animalMap.remove(oldPosition).remove(animal);
-            addAnimalToMap(animal);
+        animalMap.removeAnimal(animal, oldPosition);
+        animalMap.addAnimal(animal);
     }
-    public void addAnimalToMap(JungleAnimal animal){
-        if(! animalMap.containsKey(animal.getPosition())){
-            List<JungleAnimal> animalsAtPos = new ArrayList<>();
-            animalsAtPos.add(animal);
-            animalMap.put(animal.getPosition(), animalsAtPos);
-        }
-        else{ animalMap.get(animal.getPosition()).add(animal); }
+
+    private void removeDeadAnimal(JungleAnimal animal){
+        animalMap.removeAnimal(animal, animal.getPosition());
+        this.animals.remove(animal);
     }
     public String toString(){
         return mapVisualizer.draw(this.lowerLeft, this.upperRight);

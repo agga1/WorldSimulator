@@ -22,28 +22,21 @@ public enum Orientation {
         this.unitVector = unitVector;
     }
 
-    static {
+    static {  // TODO or ordinal?
         for (Orientation orientation : Orientation.values()) {
             map.put(orientation.id, orientation);
         }
-    }
-
-    public static Orientation valueOf(int id) {
-        return map.get(id);
     }
 
     public Orientation turnBy(int times){
         int newId = (this.id+times)%8;
         return map.get(newId);
     }
-
-    public int getId() {
-        return this.id;
+    public static Orientation valueOf(int id) {
+        return map.get(id);
     }
 
-    public Vector2d toUnitVector(){
-        return this.unitVector;
-    }
+    public int getId() { return this.id; }
 
-
+    public Vector2d toUnitVector(){ return this.unitVector; }
 }
