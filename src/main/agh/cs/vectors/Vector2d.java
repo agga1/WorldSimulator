@@ -56,7 +56,9 @@ public class Vector2d {
         return new Vector2d((-1) * this.x, (-1) * this.y);
     }
 
-    public Vector2d wrapAroundMap(Vector2d lowerLeft, Vector2d upperRight) {
+    public Vector2d mapToBoundaries(Vector2d[] boundaries) {
+        Vector2d lowerLeft = boundaries[0];
+        Vector2d upperRight = boundaries[1];
         int newX  = this.x;
         int newY = this.y;
         if (this.x > upperRight.x){ newX = lowerLeft.x; }
@@ -67,9 +69,12 @@ public class Vector2d {
     }
 
     public int surface(Vector2d other){
-        int width = abs(this.x - other.x);
-        int height = abs(this.y- other.y);
+        int width = abs(this.x - other.x)+1;
+        int height = abs(this.y- other.y)+1;
         return width*height;
+    }
+    public boolean withinRect(Vector2d ll, Vector2d ur){
+        return this.precedes(ur) && this.follows(ll);
     }
     @Override
     public int hashCode() {

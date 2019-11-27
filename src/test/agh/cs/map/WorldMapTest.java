@@ -1,6 +1,7 @@
 package agh.cs.map;
 
 import agh.cs.map.WorldMap;
+import agh.cs.mapelements.Grass;
 import agh.cs.mapelements.JungleAnimal;
 import agh.cs.vectors.Vector2d;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,19 +21,36 @@ public class WorldMapTest {
         this.worldMap = new WorldMap(ll, ur, jll, jur);
     }
     @Test
-    public void getBoundsTest(){
+    public void getBoundariesTest(){
         Vector2d[] expected = new Vector2d[]{ll, ur};
-        Vector2d[] actual = worldMap.getBounds();
+        Vector2d[] actual = worldMap.getBoundaries();
         assertEquals(expected[0], actual[0]);
         assertEquals(expected[1], actual[1]);
     }
 
     @Test
-    public void generateGrassTest(){
-        Vector2d animalPos = new Vector2d(3,3);
-        JungleAnimal animal2 = new JungleAnimal(worldMap, animalPos);
-        worldMap.place(animal2);
-        assertTrue(worldMap.generateGrass(ll, ur));
-        assertFalse(worldMap.generateGrass(animalPos, animalPos));
+    void generateGrassTest(){
+//        Grass grass ac
+        Vector2d ll = new Vector2d(0, 0);
+        Vector2d ur = new Vector2d(2, 2);
+        for(int i=0;i<20;i++){
+            Grass grass = worldMap.generateGrass(ll, ur);
+            assertTrue(grass.getPosition().withinRect(ll, ur));
+        }
+    }
+    @Test
+    void addGrassTest(){
+//        Grass grass ac
+        int surface = jll.surface(jur);
+        System.out.println(surface);
+        for(int i=0;i<surface;i++){
+            assertTrue(worldMap.addGrassOnJungle());
+        }
+        assertFalse(worldMap.addGrassOnJungle());
+        int surface2 = ll.surface(ur) - jll.surface(jur);
+        for(int i=0;i<surface2;i++){
+            assertTrue(worldMap.addGrassOnDesert());
+        }
+        assertFalse(worldMap.addGrassOnDesert());
     }
 }

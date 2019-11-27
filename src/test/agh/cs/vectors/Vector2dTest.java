@@ -36,20 +36,42 @@ public class Vector2dTest {
         assertEquals(v2_1.lowerLeft(v1_1), v1_1);
     }
     @Test
-    public  void addTest(){
+    void addTest(){
         assertEquals(v2_1.add(v1_1), v3_2);
 
     }
     @Test
-    public  void subtractTest(){
+    void subtractTest(){
         assertEquals(v3_2.subtract(v1_1), v2_1);
 
     }
     @Test
-    public  void oppositeTest(){
+    void oppositeTest(){
         assertNotEquals(v3_2.opposite(), new Vector2d(-3, 1));
-
     }
+    @Test
+    void mapToBoundariesTest(){
+        Vector2d[] bounds = new Vector2d[]{new Vector2d(0, 0), new Vector2d(3, 3)};
+        Vector2d startV = new Vector2d(3, 1);
+        Vector2d addV = new Vector2d(1, 0);
 
+        Vector2d expected = new Vector2d(0, 1);
+        Vector2d actual = startV.add(addV).mapToBoundaries(bounds);
+        assertEquals(expected, actual);
+
+        addV = new Vector2d(1, 3);
+        expected = new Vector2d(0, 0);
+        actual = startV.add(addV).mapToBoundaries(bounds);
+        assertEquals(expected, actual);
+    }
+    @Test
+    void withinRectTest(){
+        Vector2d llRect = new Vector2d(0, 0);
+        Vector2d urRect = new Vector2d(4, 3);
+        Vector2d pointIn = new Vector2d(3, 3);
+        Vector2d pointOut = new Vector2d(10, 3);
+        assertTrue(pointIn.withinRect(llRect, urRect));
+        assertFalse(pointOut.withinRect(llRect, urRect));
+    }
 
 }

@@ -56,4 +56,6 @@ public interface IWorldMap extends IPositionChangeObserver {
      * @return Object or null if the vector2d is not occupied.
      */
     Object objectAt(Vector2d vector2d);
+
+    Vector2d[] getBoundaries();
 }

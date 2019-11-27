@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class JungleAnimal {
-    private static int minEnergy = 10;  // minimum energy needed to procreate
+    private static int minEnergy = 5;  // minimum energy needed to procreate
     private Orientation orientation = Orientation.NORTH;
     private Vector2d position;
     private int[] genes;
@@ -56,7 +56,10 @@ public class JungleAnimal {
         int turnBy = this.genes[geneIndex];
         this.orientation = this.orientation.turnBy(turnBy);
         Vector2d oldPosition = this.position;
-        Vector2d newPosition = this.position.add(this.orientation.toUnitVector());
+        Vector2d newPosition = this.position
+                .add(this.orientation.toUnitVector())
+                .mapToBoundaries(this.map.getBoundaries());
+        System.out.println(newPosition);
         if(map.canMoveTo(newPosition)){
             this.position = newPosition;
             this.positionChanged(oldPosition, this.position);
@@ -65,7 +68,7 @@ public class JungleAnimal {
 
     public JungleAnimal procreate(JungleAnimal other){
         if (this.energy < minEnergy || other.energy < minEnergy){
-            return null;  // throw exception?
+            return null;
         }
         int div1 = ThreadLocalRandom.current().nextInt(1, 30);
         int div2 = ThreadLocalRandom.current().nextInt(div1, 31); // at least 1 gene in each frag
@@ -111,11 +114,7 @@ public class JungleAnimal {
 
     private void positionChanged(Vector2d oldPosition, Vector2d newPosition){ // notify observers
         for(IPositionChangeObserver observer : observers){
-            observer.positionChanged(oldPosition, newPosition);
+            observer.positionChanged(this, oldPosition);
         }
     }
-    public int getEnergy(){
-        return this.energy;
-    }
-
 }
