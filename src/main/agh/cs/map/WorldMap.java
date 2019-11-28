@@ -25,10 +25,11 @@ public class WorldMap implements IWorldMap {
     public WorldMap(int width,int height, double jungleRatio){
         this.lowerLeft = new Vector2d(0, 0);
         this.upperRight = new Vector2d(width-1, height-1);
-        this.jungleLowerLeft = new Vector2d((int) Math.floor(jungleRatio * width-1), (int) Math.floor(jungleRatio * height-1));
-        this.jungleUpperRight = new Vector2d((int) Math.ceil(jungleRatio * width-1), (int) Math.ceil(jungleRatio * height-1));
+        Vector2d jungleDim = new Vector2d((int) Math.floor(width*jungleRatio), (int) Math.floor(height*jungleRatio));
+        this.jungleLowerLeft = new Vector2d((width-jungleDim.x) /2, (height-jungleDim.y)/2);
+        this.jungleUpperRight = this.jungleLowerLeft.add(jungleDim).subtract(new Vector2d(1, 1));
         if (!lowerLeft.precedes(jungleLowerLeft)) {
-            throw new IllegalArgumentException("Jungle lower left corner can't precede map lower left corner");
+            throw new IllegalArgumentException("Jungle lower left corner can't precede map lower left corner"+this.jungleLowerLeft);
         }
         if (!upperRight.follows(jungleUpperRight)) {
             throw new IllegalArgumentException("Jungle upper right corner can't follow map upper right corner");
@@ -88,7 +89,7 @@ public class WorldMap implements IWorldMap {
         // eat grass
         // add new grass
         addGrassOnJungle();
-        visualise(300);
+        visualise(100);
     }
 
     void visualise(int timeout) throws InterruptedException {

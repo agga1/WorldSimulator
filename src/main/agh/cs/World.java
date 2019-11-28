@@ -1,17 +1,21 @@
 package agh.cs;
 
 import agh.cs.map.WorldMap;
+import agh.cs.mapelements.JungleAnimal;
 import agh.cs.vectors.Vector2d;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class World {
-    private int nrOfAnimals = 5;
+    private int nrOfAnimals;
     private int mapWidth ;
     private int mapHeight;
-    private int startEnergy = 10;
-    private int moveEnergy = 1;
-    private int plantEnergy = 3;
-    private double jungleRatio = 0.5;
+    private int startEnergy;
+    private int moveEnergy;
+    private int plantEnergy;
+    private double jungleRatio ;
     private WorldMap worldMap;
+
     private World(WorldBuilder builder) {
         this.nrOfAnimals = builder.nrOfAnimals;
         this.mapHeight = builder.mapHeight;
@@ -21,24 +25,37 @@ public class World {
         this.plantEnergy = builder.plantEnergy;
         this.startEnergy = builder.startEnergy;
         setWorldMap();
-
     }
     private void setWorldMap(){
         this.worldMap = new WorldMap(this.mapWidth, this.mapHeight, this.jungleRatio);
+        populate();
+    }
+    private void populate() {
+        for(int i=0;i<this.nrOfAnimals; i++){
+            int x = ThreadLocalRandom.current().nextInt(this.mapWidth);
+            int y = ThreadLocalRandom.current().nextInt(this.mapHeight);
+            JungleAnimal animal = new JungleAnimal(this.worldMap, new Vector2d(x, y));
+            worldMap.place(animal);
+        }
     }
 
-
+    public void simulateDays(int nrOfDays) throws InterruptedException{
+        for(int i=0;i<nrOfDays;i++){
+            worldMap.run();
+        }
+    }
 
     //Builder Class
     public static class WorldBuilder {
 
-        private int nrOfAnimals;
+        private int nrOfAnimals=5;
         private int mapWidth;
         private int mapHeight;
-        private int startEnergy;
-        private int moveEnergy;
-        private int plantEnergy;
-        private double jungleRatio;
+        private int startEnergy=5;
+        private int moveEnergy=1;
+        private int plantEnergy=2;
+        private double jungleRatio=0.5;
+
         public WorldBuilder(int mapWidth, int mapHeight){
             this.mapHeight = mapHeight;
             this.mapWidth = mapWidth;
