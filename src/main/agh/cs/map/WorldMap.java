@@ -5,10 +5,7 @@ import agh.cs.vectors.Vector2d;
 import agh.cs.mapelements.Grass;
 import agh.cs.mapelements.JungleAnimal;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class WorldMap implements IWorldMap {
@@ -20,6 +17,7 @@ public class WorldMap implements IWorldMap {
     private AnimalHashMap animalMap = new AnimalHashMap();
     private List<JungleAnimal> animals = new ArrayList<>();
     private MapVisualizer mapVisualizer = new MapVisualizer(this);
+    private Set <Vector2d> occupiedSpace = new HashSet<>();
     private int day = 0;
 
     public WorldMap(int width,int height, double jungleRatio){
@@ -45,7 +43,7 @@ public class WorldMap implements IWorldMap {
         return true;
     }
 
-    public Grass generateGrass(Vector2d lowerLeft, Vector2d upperRight){
+    public Grass generateGrass(Vector2d lowerLeft, Vector2d upperRight){  // TODO use occupiedSpace instead
         int x, y;
         int tryCounter = 0;
         do {
@@ -86,6 +84,7 @@ public class WorldMap implements IWorldMap {
                 this.removeDeadAnimal(animals.get(i));
         // move all animals
         animals.forEach(JungleAnimal::move);
+        // iterate over occupiedSpace set
         // eat grass
         // add new grass
         addGrassOnJungle();
