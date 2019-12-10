@@ -1,9 +1,7 @@
 package agh.cs.map;
 
-import agh.cs.map.WorldMap;
 import agh.cs.mapelements.Grass;
-import agh.cs.mapelements.JungleAnimal;
-import agh.cs.vectors.Vector2d;
+import agh.cs.utilsClasses.Vector2d;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

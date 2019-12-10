@@ -1,4 +1,4 @@
-package agh.cs.vectors;
+package agh.cs.utilsClasses;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

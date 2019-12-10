@@ -1,8 +1,8 @@
 package agh.cs;
 
 import agh.cs.map.WorldMap;
-import agh.cs.mapelements.JungleAnimal;
-import agh.cs.vectors.Vector2d;
+import agh.cs.mapelements.Animal;
+import agh.cs.utilsClasses.Vector2d;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -32,9 +32,10 @@ public class World {
     }
     private void populate() {
         for(int i=0;i<this.nrOfAnimals; i++){
+            System.out.println("..");
             int x = ThreadLocalRandom.current().nextInt(this.mapWidth);
             int y = ThreadLocalRandom.current().nextInt(this.mapHeight);
-            JungleAnimal animal = new JungleAnimal(this.worldMap, new Vector2d(x, y));
+            Animal animal = new Animal(this.worldMap, new Vector2d(x, y));
             worldMap.place(animal);
         }
     }

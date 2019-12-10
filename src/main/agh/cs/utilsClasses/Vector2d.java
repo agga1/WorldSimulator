@@ -1,5 +1,7 @@
-package agh.cs.vectors;
+package agh.cs.utilsClasses;
 
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.Objects;
 
 import static java.lang.Math.abs;
@@ -81,4 +83,12 @@ public class Vector2d {
         return Objects.hash(x, y);
     }
 
+    private static Collection<Vector2d> rectToVectors(Vector2d lowerLeft, Vector2d upperRight) {
+        final var collection = new LinkedList<Vector2d>();
+        for(int x= lowerLeft.x; x<=upperRight.x; x++){
+            for(int y = lowerLeft.y; y<=upperRight.y;y++)
+                collection.add(new Vector2d(x, y));
+        }
+        return collection;
+    }
 }

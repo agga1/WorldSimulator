@@ -2,15 +2,16 @@ package agh.cs.mapelements;
 
 import agh.cs.map.IPositionChangeObserver;
 import agh.cs.map.IWorldMap;
-import agh.cs.vectors.Orientation;
-import agh.cs.vectors.Vector2d;
+import agh.cs.utilsClasses.Orientation;
+import agh.cs.utilsClasses.Vector2d;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class JungleAnimal {
+public class Animal {
     private static int minEnergy = 5;  // minimum energy needed to procreate
     private Orientation orientation = Orientation.NORTH;
     private Vector2d position;
@@ -24,13 +25,12 @@ public class JungleAnimal {
         for(int i = 0; i<32; i++ ){
             genes[i] = ThreadLocalRandom.current().nextInt(0, 8);
         }
-        standardizeGenes(genes);
-        return genes;
+        return standardizeGenes(genes);
     }
 
-    private static int[] standardizeGenes(int[] genes){
+    public static int[] standardizeGenes(int[] genes){
         Arrays.sort(genes);
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 8; i++) {
             final int a = i;
             if (Arrays.stream(genes).noneMatch(gene -> gene == a)) {
                 genes[i] = a;
@@ -39,10 +39,12 @@ public class JungleAnimal {
         Arrays.sort(genes);
         return genes;
     }
-    public JungleAnimal(IWorldMap map, Vector2d initialPos) { // TODO make builder?
+    public Animal(){
+    }
+    public Animal(IWorldMap map, Vector2d initialPos) { // TODO make builder?
         this(map, initialPos, createRandomGenes(), minEnergy*2);
     }
-    public JungleAnimal(IWorldMap map, Vector2d initialPos, int[] genes, int energy) {
+    public Animal(IWorldMap map, Vector2d initialPos, int[] genes, int energy) {
         this.map = map;
         this.position = initialPos;
         this.genes = genes;
@@ -65,9 +67,9 @@ public class JungleAnimal {
         }
     }
 
-    public JungleAnimal procreate(JungleAnimal other){
+    public Optional<Animal> procreate(Animal other){
         if (this.energy < minEnergy || other.energy < minEnergy){
-            return null;
+            return Optional.empty();
         }
         int div1 = ThreadLocalRandom.current().nextInt(1, 30);
         int div2 = ThreadLocalRandom.current().nextInt(div1, 31); // at least 1 gene in each frag
@@ -75,13 +77,13 @@ public class JungleAnimal {
         System.arraycopy(this.genes, 0, newGenes, 0, div1);
         System.arraycopy(other.genes, div1, genes, div1, div2 - div1);
         System.arraycopy(this.genes, div2, genes, div2, genes.length - div2);
-        standardizeGenes(newGenes);
         int newEnergy = this.energy/4 + other.energy/4;
         this.energy = this.energy*3/4;
         other.energy = other.energy*3/4;
-        return new JungleAnimal(this.map, this.position, newGenes, newEnergy);
+
+        return Optional.of(new Animal(this.map, this.position, standardizeGenes(newGenes), newEnergy));
     }
-    private void eatGrass(Grass grass){
+    public void eatGrass(){
         this.energy += 5;
     }
     public boolean isDead(){
@@ -115,5 +117,8 @@ public class JungleAnimal {
         for(IPositionChangeObserver observer : observers){
             observer.positionChanged(this, oldPosition);
         }
+    }
+    public int getEnergy() {
+        return energy;
     }
 }
