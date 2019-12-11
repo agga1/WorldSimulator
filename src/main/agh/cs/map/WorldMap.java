@@ -1,6 +1,7 @@
 package agh.cs.map;
 
 import agh.cs.utilsClasses.AnimalHashMap;
+import agh.cs.utilsClasses.Rect;
 import agh.cs.utilsClasses.Vector2d;
 import agh.cs.mapelements.Grass;
 import agh.cs.mapelements.Animal;
@@ -9,7 +10,7 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Integer.max;
-
+// TODO regions
 public class WorldMap implements IWorldMap {
     private Vector2d upperRight;
     private Vector2d lowerLeft;
@@ -21,6 +22,9 @@ public class WorldMap implements IWorldMap {
     private MapVisualizer mapVisualizer = new MapVisualizer(this);
     private int day = 0;
 
+    private List<IRegion> regions;
+
+    // TODO move regions boundaries to regions
     public WorldMap(int width,int height, double jungleRatio){
         this.lowerLeft = new Vector2d(0, 0);
         this.upperRight = new Vector2d(width-1, height-1);
@@ -34,6 +38,12 @@ public class WorldMap implements IWorldMap {
         if (!upperRight.follows(jungleUpperRight)) {
             throw new IllegalArgumentException("Jungle upper right corner can't follow map upper right corner");
         }
+
+        //-----new impl
+        IRegion jungle = new BasicRegion(List.of(new Rect(jungleLowerLeft, jungleUpperRight)));
+        IRegion desert = new BasicRegion(List.of(new Rect(lowerLeft, upperRight)));
+        regions.add(jungle);
+        regions.add(desert);
     }
 
     public boolean place(Animal animal) throws IllegalArgumentException{

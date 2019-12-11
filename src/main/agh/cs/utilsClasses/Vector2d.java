@@ -75,20 +75,12 @@ public class Vector2d {
         int height = abs(this.y- other.y)+1;
         return width*height;
     }
+    // TODO move to Rect
     public boolean withinRect(Vector2d ll, Vector2d ur){
         return this.precedes(ur) && this.follows(ll);
     }
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
-    }
-
-    private static Collection<Vector2d> rectToVectors(Vector2d lowerLeft, Vector2d upperRight) {
-        final var collection = new LinkedList<Vector2d>();
-        for(int x= lowerLeft.x; x<=upperRight.x; x++){
-            for(int y = lowerLeft.y; y<=upperRight.y;y++)
-                collection.add(new Vector2d(x, y));
-        }
-        return collection;
     }
 }
