@@ -33,6 +33,7 @@ public class Animal {
         addObserver(map);
     }
     public void move(){
+
         this.energy -= 1; // movement takes 1 energy
         int geneIndex = ThreadLocalRandom.current().nextInt(this.genome.getGenome().length);
         int turnBy = this.genome.getGeneAt(geneIndex);

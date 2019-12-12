@@ -2,11 +2,13 @@ package agh.cs;
 
 import agh.cs.map.WorldMap;
 import agh.cs.mapelements.Animal;
+import agh.cs.utilsClasses.Config;
 import agh.cs.utilsClasses.Vector2d;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 public class World {
+    private final Config config = Config.getInstance();
     private int nrOfAnimals;
     private int mapWidth ;
     private int mapHeight;

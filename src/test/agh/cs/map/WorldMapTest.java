@@ -24,16 +24,6 @@ class WorldMapTest {
         assertEquals(expected[1], actual[1]);
     }
 
-    @Test
-    void generateGrassTest(){
-//        Grass grass ac
-        Vector2d ll = new Vector2d(0, 0);
-        Vector2d ur = new Vector2d(2, 2);
-        for(int i=0;i<20;i++){
-            Grass grass = worldMap.generateGrass(ll, ur);
-            assertTrue(grass.getPosition().withinRect(ll, ur));
-        }
-    }
 //    @Test
 //    void addGrassTest(){
 //        Grass grass ac
