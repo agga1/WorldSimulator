@@ -1,7 +1,18 @@
 package agh.cs;
+
+import agh.cs.map.WorldMap;
+
+import java.util.stream.IntStream;
+
 public class MainProg {
     public static void main(String[] args) throws InterruptedException {
-        World world = new World.WorldBuilder(7,7).setNrOfAnimals(3).setJungleRatio(0.6).build();
-        world.simulateDays(113);
+        WorldMap map = new WorldMap();
+        IntStream.range(0, 15).forEach(i -> {
+            try {
+                map.run();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }

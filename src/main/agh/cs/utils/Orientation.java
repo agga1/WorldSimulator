@@ -1,4 +1,4 @@
-package agh.cs.utilsClasses;
+package agh.cs.utils;
 
 import java.util.HashMap;
 import java.util.Map;

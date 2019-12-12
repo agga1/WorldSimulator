@@ -1,4 +1,4 @@
-package agh.cs.utilsClasses;
+package agh.cs.configuration;
 
 /**
  * Singleton responsible for holding information about simulation parameters.

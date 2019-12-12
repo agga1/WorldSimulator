@@ -1,10 +1,10 @@
-package agh.cs.map;
+package agh.cs.map.regions;
 
 import agh.cs.mapelements.Animal;
 import agh.cs.mapelements.Grass;
-import agh.cs.utilsClasses.AnimalHashMap;
-import agh.cs.utilsClasses.Rect;
-import agh.cs.utilsClasses.Vector2d;
+import agh.cs.utils.AnimalHashMap;
+import agh.cs.utils.Rect;
+import agh.cs.utils.Vector2d;
 
 import java.util.*;
 import java.util.stream.Collectors;

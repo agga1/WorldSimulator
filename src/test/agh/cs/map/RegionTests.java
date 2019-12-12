@@ -1,7 +1,7 @@
 package agh.cs.map;
 
-import agh.cs.utilsClasses.Rect;
-import agh.cs.utilsClasses.Vector2d;
+import agh.cs.utils.Rect;
+import agh.cs.utils.Vector2d;
 import org.junit.jupiter.api.Test;
 
 public class RegionTests {

@@ -1,6 +1,6 @@
-package agh.cs.map;
+package agh.cs.map.regions;
 
-import agh.cs.utilsClasses.Rect;
+import agh.cs.utils.Rect;
 
 import java.util.List;
 

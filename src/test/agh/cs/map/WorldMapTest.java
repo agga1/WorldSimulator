@@ -1,7 +1,6 @@
 package agh.cs.map;
 
-import agh.cs.mapelements.Grass;
-import agh.cs.utilsClasses.Vector2d;
+import agh.cs.utils.Vector2d;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +13,7 @@ class WorldMapTest {
 
     @BeforeEach
     void setup(){
-        this.worldMap = new WorldMap(5, 5, 0.5);
+        this.worldMap = new WorldMap();
     }
     @Test
     void getBoundariesTest(){

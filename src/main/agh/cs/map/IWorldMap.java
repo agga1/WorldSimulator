@@ -1,6 +1,6 @@
 package agh.cs.map;
 
-import agh.cs.utilsClasses.Vector2d;
+import agh.cs.utils.Vector2d;
 import agh.cs.mapelements.Animal;
 
 /**

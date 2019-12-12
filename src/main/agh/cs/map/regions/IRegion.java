@@ -1,7 +1,7 @@
-package agh.cs.map;
+package agh.cs.map.regions;
 
 import agh.cs.mapelements.Animal;
-import agh.cs.utilsClasses.Vector2d;
+import agh.cs.utils.Vector2d;
 
 import java.util.List;
 import java.util.Optional;

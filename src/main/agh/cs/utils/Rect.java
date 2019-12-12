@@ -1,6 +1,5 @@
-package agh.cs.utilsClasses;
+package agh.cs.utils;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;

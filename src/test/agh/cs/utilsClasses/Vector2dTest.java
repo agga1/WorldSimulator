@@ -1,4 +1,5 @@
 package agh.cs.utilsClasses;
+import agh.cs.utils.Vector2d;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

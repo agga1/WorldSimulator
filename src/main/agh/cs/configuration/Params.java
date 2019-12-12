@@ -1,4 +1,4 @@
-package agh.cs.utilsClasses;
+package agh.cs.configuration;
 
 public class Params {
     public final int width;

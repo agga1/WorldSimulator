@@ -1,7 +1,7 @@
 package agh.cs.map;
 
 import agh.cs.mapelements.Animal;
-import agh.cs.utilsClasses.Vector2d;
+import agh.cs.utils.Vector2d;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ public class AnimalAndWorldMapTests {
 
     @BeforeEach
     public void setup(){
-        this.worldMap = new WorldMap(10, 10, 0.2);
+        this.worldMap = new WorldMap();
         this.animal = new Animal(worldMap, startPos);
     }
 

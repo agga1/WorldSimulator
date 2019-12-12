@@ -1,12 +1,15 @@
 package agh.cs.map;
 
-import agh.cs.utilsClasses.AnimalHashMap;
-import agh.cs.utilsClasses.Config;
-import agh.cs.utilsClasses.Rect;
-import agh.cs.utilsClasses.Vector2d;
+import agh.cs.configuration.Config;
+import agh.cs.map.regions.BasicRegion;
+import agh.cs.map.regions.IRegion;
+import agh.cs.utils.Rect;
+import agh.cs.utils.Vector2d;
 import agh.cs.mapelements.Animal;
+import agh.cs.visualization.MapVisualizer;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Integer.max;
 
@@ -19,7 +22,11 @@ public class WorldMap implements IWorldMap {
 
     private List<IRegion> regions = new ArrayList<>();
 
-    public WorldMap(int width,int height, double jungleRatio){
+    public WorldMap(){
+        int width = config.params.width;
+        int height = config.params.height;
+        double jungleRatio = config.params.jungleRatio;
+
         Vector2d lowerLeft = new Vector2d(0, 0);
         Vector2d upperRight = new Vector2d(width - 1, height - 1);
         this.rect = new Rect(lowerLeft, upperRight);
@@ -39,6 +46,17 @@ public class WorldMap implements IWorldMap {
         IRegion desert = new BasicRegion(rect.subtract(new Rect(jungleLowerLeft, jungleUpperRight)) );
         regions.add(jungle);
         regions.add(desert);
+
+        populate();
+    }
+
+    private void populate(){
+        for(int i=0;i<config.params.animalsAtStart; i++){
+            int x = ThreadLocalRandom.current().nextInt(config.params.width);
+            int y = ThreadLocalRandom.current().nextInt(config.params.height);
+            Animal animal = new Animal(this, new Vector2d(x, y));
+            this.place(animal);
+        }
     }
 
     public boolean place(Animal animal) throws IllegalArgumentException{

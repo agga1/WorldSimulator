@@ -1,10 +1,12 @@
-package agh.cs.utilsClasses;
+package agh.cs.utils;
 
 import agh.cs.mapelements.Animal;
-import agh.cs.utilsClasses.Vector2d;
 
 import java.util.*;
 
+/**
+ * implementation of multimap designed for animals
+ */
 public class AnimalHashMap {
     private Map<Vector2d, List<Animal>> animalMap= new HashMap<>();
     public AnimalHashMap(){}
@@ -19,6 +21,7 @@ public class AnimalHashMap {
     }
 
     public void removeAnimal(Animal animal, Vector2d position){
+        if(this.animalMap.get(position)==null) return;
         this.animalMap.get(position).remove(animal);
         if(this.animalMap.get(position).isEmpty())
             this.animalMap.remove(position);

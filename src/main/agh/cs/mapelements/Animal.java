@@ -2,17 +2,17 @@ package agh.cs.mapelements;
 
 import agh.cs.map.IPositionChangeObserver;
 import agh.cs.map.IWorldMap;
-import agh.cs.utilsClasses.Orientation;
-import agh.cs.utilsClasses.Vector2d;
+import agh.cs.configuration.Config;
+import agh.cs.utils.Orientation;
+import agh.cs.utils.Vector2d;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Animal {
-    private static int minEnergy = 5;  // minimum energy needed to procreate
+    private static int minEnergy = Config.getInstance().params.startEnergy/2;  // minimum energy needed to procreate
     private Orientation orientation = Orientation.NORTH;
     private Vector2d position;
     private Genome genome;
@@ -23,18 +23,18 @@ public class Animal {
     public Animal(){
     }
     public Animal(IWorldMap map, Vector2d initialPos) { // TODO make builder?
-        this(map, initialPos, new Genome(), minEnergy*2);
+        this(map, initialPos, new Genome(), Config.getInstance().params.startEnergy);
     }
     public Animal(IWorldMap map, Vector2d initialPos, Genome genome, int energy) {
         this.map = map;
         this.position = initialPos;
-        this.genome = new Genome();
+        this.genome = genome;
         this.energy = energy;
         addObserver(map);
     }
     public void move(){
 
-        this.energy -= 1; // movement takes 1 energy
+        this.energy -= Config.getInstance().params.moveEnergy; // movement takes 1 energy
         int geneIndex = ThreadLocalRandom.current().nextInt(this.genome.getGenome().length);
         int turnBy = this.genome.getGeneAt(geneIndex);
         this.orientation = this.orientation.turnBy(turnBy);
@@ -59,7 +59,7 @@ public class Animal {
         return Optional.of(new Animal(this.map, this.position, childGenome, newEnergy));
     }
     public void eatGrass(){
-        this.energy += 5;
+        this.energy += Config.getInstance().params.plantEnergy;
     }
     public boolean isDead(){
         return this.energy < 1;
