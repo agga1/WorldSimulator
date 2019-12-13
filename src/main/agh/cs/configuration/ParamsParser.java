@@ -2,8 +2,10 @@ package agh.cs.configuration;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonParseException;
 
 public class ParamsParser {
     private static final String defaultParameters = "parameters.json";
@@ -17,11 +19,13 @@ public class ParamsParser {
     }
 
     public static Params parse(String name) {
-        Gson gson = new Gson();
         try{
+            Gson gson = new Gson();
             return gson.fromJson(new FileReader(configuration+name), Params.class);
-        }catch (Exception e){
+        }catch (IOException e){
             System.out.println("sth went wrong");
+        }catch (JsonParseException e){
+            System.out.println("parser error");
         }
         return null;
     }

@@ -86,7 +86,7 @@ public class WorldMap implements IWorldMap {
         // add new grass
         regions.forEach(IRegion::growGrass);
 
-        visualise(100);
+        visualise(2);
     }
 
     void visualise(int timeout) throws InterruptedException {

@@ -37,22 +37,26 @@ public abstract class AbstractRegion implements IRegion {
 
     public void onMove(Animal animal, Vector2d from) {
         if (contains(from)) { // animal prev in the region
-            if (animalMap.get(from).isEmpty())  // old position became empty
-                freeSpace.add(from);
             animalMap.removeAnimal(animal, from); // remove from old position
-            if (contains(animal.getPosition()))
+            if (animalMap.get(from) == null) {// old position became empty
+                freeSpace.add(from);
+            }
+            if (contains(animal.getPosition())){
                 animalMap.addAnimal(animal);  // add to new position if object is still in the region
-            else
-                System.out.println("animal changed region " + animal.getPosition());
+                freeSpace.remove(animal.getPosition());
+            }
         } else if (contains(animal.getPosition())) {  // animal prev outside but now in the region
-            freeSpace.remove(animal.getPosition());
             animalMap.addAnimal(animal);
+            freeSpace.remove(animal.getPosition());
         }
     }
 
     public void onDeath(Animal animal) {
-        if (!contains(animal.getPosition())) return;
-        animalMap.removeAnimal(animal, animal.getPosition());
+        Vector2d pos = animal.getPosition();
+        if (!contains(pos)) return;
+        animalMap.removeAnimal(animal, pos);
+        if(objectAt(pos).isEmpty())
+            freeSpace.add(pos);
     }
 
     public void growGrass() {
