@@ -65,14 +65,5 @@ public class Vector2dTest {
         actual = startV.add(addV).mapToBoundaries(bounds);
         assertEquals(expected, actual);
     }
-    @Test
-    void withinRectTest(){
-        Vector2d llRect = new Vector2d(0, 0);
-        Vector2d urRect = new Vector2d(4, 3);
-        Vector2d pointIn = new Vector2d(3, 3);
-        Vector2d pointOut = new Vector2d(10, 3);
-        assertTrue(pointIn.withinRect(llRect, urRect));
-        assertFalse(pointOut.withinRect(llRect, urRect));
-    }
 
 }

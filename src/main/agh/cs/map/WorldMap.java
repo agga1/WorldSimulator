@@ -1,15 +1,17 @@
 package agh.cs.map;
 
 import agh.cs.configuration.Config;
-import agh.cs.map.regions.BasicRegion;
-import agh.cs.map.regions.IRegion;
+import agh.cs.mapelements.Grass;
+import agh.cs.utils.AnimalHashMap;
 import agh.cs.utils.Rect;
 import agh.cs.utils.Vector2d;
 import agh.cs.mapelements.Animal;
 import agh.cs.visualization.MapVisualizer;
+import com.google.gson.internal.bind.util.ISO8601Utils;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import static java.lang.Integer.max;
@@ -17,11 +19,14 @@ import static java.lang.Integer.max;
 public class WorldMap implements IWorldMap {
     private final Config config = Config.getInstance();
     private Rect rect;
+    private Rect jungleRect;
     private List<Animal> animals = new ArrayList<>();
     private MapVisualizer mapVisualizer = new MapVisualizer(this);
-    private int day = 0;
+    private Map<Vector2d, Grass> grassMap = new HashMap<>();
+    private AnimalHashMap animalMap = new AnimalHashMap();
+    private Set<Vector2d> freeSpace = new HashSet<>();
 
-    private List<IRegion> regions = new ArrayList<>();
+    private int day = 0;
 
     public WorldMap(){
         int width = config.params.width;
@@ -42,20 +47,16 @@ public class WorldMap implements IWorldMap {
         if (!upperRight.follows(jungleUpperRight)) {
             throw new IllegalArgumentException("Jungle upper right corner can't follow map upper right corner");
         }
-
-        IRegion jungle = new BasicRegion(this, List.of( new Rect(jungleLowerLeft, jungleUpperRight)));
-        IRegion desert = new BasicRegion(this, rect.subtract(new Rect(jungleLowerLeft, jungleUpperRight)) );
-        regions.add(jungle);
-        regions.add(desert);
-
+        this.jungleRect = new Rect(jungleLowerLeft, jungleUpperRight);
+        this.freeSpace.addAll(this.rect.toVectors());
         populate();
     }
 
     private void populate(){
         for(int i=0;i<config.params.animalsAtStart; i++){
-            int x = ThreadLocalRandom.current().nextInt(config.params.width);
-            int y = ThreadLocalRandom.current().nextInt(config.params.height);
-            Animal animal = new Animal(this, new Vector2d(x, y));
+            Vector2d position = randomFromSet(freeSpace);
+            if(position == null) throw new IllegalArgumentException("map declared too small for all the animals");
+            Animal animal = new Animal(this, position);
             this.place(animal);
         }
     }
@@ -65,7 +66,8 @@ public class WorldMap implements IWorldMap {
             throw new IllegalArgumentException(animal.getPosition() + " is outside map! ");
         }
         animals.add(animal);
-        regions.forEach(r-> r.addAnimal(animal));  // add animals to regions
+        animalMap.addAnimal(animal);
+        freeSpace.remove(animal.getPosition());
         return true;
     }
 
@@ -79,13 +81,56 @@ public class WorldMap implements IWorldMap {
         // move all animals
         animals.forEach(Animal::move);
         // eat grass in each region
-        regions.forEach(IRegion::grassCollisions);
+        animalMap.keySet().forEach(this::eatGrass);
         // procreate in each region
-        regions.forEach(IRegion::animalCollisions);
+        List<Animal> newborns = animalMap.keySet().stream()
+                .map(this::procreate)
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .collect(Collectors.toList());
+        newborns.forEach(this::place);
         // add new grass
-        regions.forEach(IRegion::growGrass);
-
-        visualise(2);
+        growGrass();
+        visualise(50);
+    }
+    private void growGrass(){
+        Set<Vector2d> freeJungle = Set.copyOf(freeSpace).stream()
+                .filter(v-> this.jungleRect.contains(v)).collect(Collectors.toSet());
+        Set<Vector2d> freeDesert = new HashSet<>(freeSpace);
+        freeDesert.removeAll(freeJungle);
+        Vector2d onJungle = randomFromSet(freeJungle);
+        Vector2d onDesert = randomFromSet(freeDesert);
+        if(onDesert != null){
+            grassMap.put(onDesert, new Grass(onDesert));
+            freeSpace.remove(onDesert);
+        }
+        if(onJungle != null){
+            grassMap.put(onJungle, new Grass(onJungle));
+            freeSpace.remove(onJungle);
+        }
+    }
+    private static Vector2d randomFromSet(Set<Vector2d> set){
+        if(set.isEmpty()) return null;
+        int idx = new Random().nextInt(set.size());
+        int i=0;
+        for(Vector2d vector:set){
+            if(i==idx) return vector;
+            i++;
+        }
+        return null;
+    }
+    private void eatGrass(Vector2d position){
+        if(grassMap.get(position)==null) return;
+        List<Animal> animalsAtPos = animalMap.get(position);
+        animalsAtPos.sort(Comparator.comparing(Animal::getEnergy));
+        List<Animal> strongest = new ArrayList<>();
+        strongest.add(animalsAtPos.get(0));
+        for(int i=1;i<animalsAtPos.size();i++){
+            strongest.add(animalsAtPos.get(i));
+        }
+        double part = 1.0/strongest.size();
+        grassMap.remove(position);
+        strongest.forEach(a->a.eatGrass(part));
     }
 
     void visualise(int timeout) throws InterruptedException {
@@ -102,34 +147,41 @@ public class WorldMap implements IWorldMap {
     }
 
     public void positionChanged(Animal animal, Vector2d from){
-        regions.forEach(r-> r.onMove(animal, from));
+        animalMap.removeAnimal(animal, from);
+        if(objectAt(from)==null)
+            freeSpace.add(from);
+        animalMap.addAnimal(animal);
+        freeSpace.remove(animal.getPosition());
     }
 
     private void removeDeadAnimal(Animal animal){
-        regions.forEach(r->r.onDeath(animal));
-        this.animals.remove(animal);
+        animalMap.removeAnimal(animal, animal.getPosition());
+        if(objectAt(animal.getPosition())==null)
+            freeSpace.add(animal.getPosition());
+        animals.remove(animal);
     }
 
-    public void procreate(Animal first, Animal other){
-        Vector2d position = first.getPosition();
-        int idx;
+    private Optional<Animal> procreate(Vector2d position){
+        List<Animal> animalsAtPos = animalMap.get(position);
+        if(animalsAtPos.size() < 2 ) return Optional.empty();
+        animalsAtPos.sort(Comparator.comparing(Animal::getEnergy));
+        Animal parent1 = animalsAtPos.get(0);
+        Animal parent2 = animalsAtPos.get(1);
+        Vector2d childPosition;
         List<Vector2d> positions = new Rect(
                             new Vector2d(position.x-1, position.y-1),
-                            new Vector2d(position.x+1, position.y+1))
-                    .toVectors()
-                    .stream().filter(pos -> objectAt(pos)==null)
-                    .collect(Collectors.toList());
-        if(positions.size() > 0){
-            idx = new Random().nextInt(positions.size());
-        } else{
-            idx = new Random().nextInt(9);
-            positions = new ArrayList<>(new Rect(
-                    new Vector2d(position.x - 1, position.y - 1),
-                    new Vector2d(position.x + 1, position.y + 1))
-                    .toVectors());
+                            new Vector2d(position.x+1, position.y+1)).toVectors().stream()
+                            .map(v->v.mapToBoundaries(this.getBoundaries()) ).collect(Collectors.toList());
+        List<Vector2d> emptyPositions = positions.stream().filter(p->objectAt(p)==null).collect(Collectors.toList());
+
+        if(emptyPositions.size() > 0){ // at least 1 free position found
+            int idx = new Random().nextInt(emptyPositions.size());
+            childPosition = emptyPositions.get(idx);
+        } else{ // all adjacent positions occupied
+            int idx = new Random().nextInt(9);
+            childPosition = positions.get(idx);
         }
-        Optional<Animal> child = first.procreate(other, positions.get(idx));
-        child.ifPresent(this::place);
+       return parent1.procreate(parent2, childPosition);
     }
 
     @Override
@@ -138,16 +190,11 @@ public class WorldMap implements IWorldMap {
     }
 
     public Object objectAt(Vector2d pos){ // returns any object
-        Optional<IRegion> inRegion =  getRegionContainingPoint(pos);
-        if(inRegion.isPresent()){
-            Optional<Object> obj = inRegion.get().objectAt(pos);
-            return obj.orElse(null);
-        }
-        return null;
+        List<Animal> animalsAtPos = animalMap.get(pos);
+        if(animalsAtPos != null) return animalsAtPos.get(0);
+        return grassMap.get(pos);
     }
-    private Optional<IRegion> getRegionContainingPoint(Vector2d point){
-        return  regions.stream().filter(r -> r.contains(point)).findAny();
-    }
+
     public String toString(){
         return mapVisualizer.draw(this.rect.lowerLeft, this.rect.upperRight);
     }

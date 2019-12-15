@@ -68,15 +68,6 @@ public class Vector2d {
         return new Vector2d(newX, newY);
     }
 
-    public int surface(Vector2d other){
-        int width = abs(this.x - other.x)+1;
-        int height = abs(this.y- other.y)+1;
-        return width*height;
-    }
-    // TODO move to Rect
-    public boolean withinRect(Vector2d ll, Vector2d ur){
-        return this.precedes(ur) && this.follows(ll);
-    }
     @Override
     public int hashCode() {
         return Objects.hash(x, y);

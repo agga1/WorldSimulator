@@ -23,7 +23,8 @@ public class AnimalHashMap {
     public void removeAnimal(Animal animal, Vector2d position){
         if(this.animalMap.get(position)==null) return;
         this.animalMap.get(position).remove(animal);
-        if(this.animalMap.get(position).isEmpty())
+
+        if(this.animalMap.get(position).isEmpty()) // remove redundant key
             this.animalMap.remove(position);
     }
     public List<Animal> get(Vector2d position){

@@ -48,7 +48,7 @@ public class Animal {
     }
 
     public Optional<Animal> procreate(Animal other, Vector2d position){
-
+        if(! canReproduce(other)) return Optional.empty();
         int newEnergy = this.energy/4 + other.energy/4;
         this.energy = this.energy*3/4;
         other.energy = other.energy*3/4;
@@ -61,8 +61,8 @@ public class Animal {
         return this.energy >= minEnergy && other.energy >= minEnergy;
     }
 
-    public void eatGrass(){
-        this.energy += Config.getInstance().params.plantEnergy;
+    public void eatGrass(double part){
+        this.energy = (int) (this.energy+ (Config.getInstance().params.plantEnergy)*part);
     }
 
     public boolean isDead(){
