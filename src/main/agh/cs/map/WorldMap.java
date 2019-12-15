@@ -112,14 +112,23 @@ public class WorldMap implements IWorldMap {
 
     public void procreate(Animal first, Animal other){
         Vector2d position = first.getPosition();
-        List<Vector2d> emptyPos = new Rect(
+        int idx;
+        List<Vector2d> positions = new Rect(
                             new Vector2d(position.x-1, position.y-1),
                             new Vector2d(position.x+1, position.y+1))
                     .toVectors()
                     .stream().filter(pos -> objectAt(pos)==null)
                     .collect(Collectors.toList());
-        int idx = new Random().nextInt(emptyPos.size());
-        Optional<Animal> child = first.procreate(other, emptyPos.get(idx));
+        if(positions.size() > 0){
+            idx = new Random().nextInt(positions.size());
+        } else{
+            idx = new Random().nextInt(9);
+            positions = new ArrayList<>(new Rect(
+                    new Vector2d(position.x - 1, position.y - 1),
+                    new Vector2d(position.x + 1, position.y + 1))
+                    .toVectors());
+        }
+        Optional<Animal> child = first.procreate(other, positions.get(idx));
         child.ifPresent(this::place);
     }
 
