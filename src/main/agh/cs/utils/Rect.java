@@ -41,7 +41,7 @@ public class Rect {
     /**
      *
      * @param other rectangle that we want to subtract
-     * @return
+     * @return list of rectangles obtained from subtracting other
      */
     public List<Rect> subtract(Rect other){
         return List.of( Rect.create(lowerLeft, new Vector2d(other.lowerLeft.x, other.upperRight.y)),

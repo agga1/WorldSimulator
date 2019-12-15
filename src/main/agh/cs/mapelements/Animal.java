@@ -4,11 +4,10 @@ import agh.cs.map.IPositionChangeObserver;
 import agh.cs.map.IWorldMap;
 import agh.cs.configuration.Config;
 import agh.cs.utils.Orientation;
+import agh.cs.utils.Rect;
 import agh.cs.utils.Vector2d;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Animal {
@@ -48,22 +47,28 @@ public class Animal {
         }
     }
 
-    public Optional<Animal> procreate(Animal other){
-        if (this.energy < minEnergy || other.energy < minEnergy){
-            return Optional.empty();
-        }
+    public Optional<Animal> procreate(Animal other, Vector2d position){
+
         int newEnergy = this.energy/4 + other.energy/4;
         this.energy = this.energy*3/4;
         other.energy = other.energy*3/4;
         Genome childGenome = new Genome(this.genome, other.genome);
-        return Optional.of(new Animal(this.map, this.position, childGenome, newEnergy));
+
+        return Optional.of(new Animal(this.map, position, childGenome, newEnergy));
     }
+
+    public boolean canReproduce(Animal other){
+        return this.energy >= minEnergy && other.energy >= minEnergy;
+    }
+
     public void eatGrass(){
         this.energy += Config.getInstance().params.plantEnergy;
     }
+
     public boolean isDead(){
         return this.energy < 1;
     }
+
     public Orientation getOrientation() {
         return this.orientation;
     }

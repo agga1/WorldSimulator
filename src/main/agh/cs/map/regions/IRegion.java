@@ -14,5 +14,5 @@ public interface IRegion {
     void growGrass();
     boolean addAnimal(Animal animal);
     Optional<Object> objectAt(Vector2d position);
-    Optional<List<Animal>> animalCollisions();
+    void animalCollisions();
 }

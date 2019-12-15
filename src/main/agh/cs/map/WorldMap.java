@@ -10,6 +10,7 @@ import agh.cs.visualization.MapVisualizer;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 import static java.lang.Integer.max;
 
@@ -42,8 +43,8 @@ public class WorldMap implements IWorldMap {
             throw new IllegalArgumentException("Jungle upper right corner can't follow map upper right corner");
         }
 
-        IRegion jungle = new BasicRegion(List.of(new Rect(jungleLowerLeft, jungleUpperRight)));
-        IRegion desert = new BasicRegion(rect.subtract(new Rect(jungleLowerLeft, jungleUpperRight)) );
+        IRegion jungle = new BasicRegion(this, List.of( new Rect(jungleLowerLeft, jungleUpperRight)));
+        IRegion desert = new BasicRegion(this, rect.subtract(new Rect(jungleLowerLeft, jungleUpperRight)) );
         regions.add(jungle);
         regions.add(desert);
 
@@ -80,9 +81,7 @@ public class WorldMap implements IWorldMap {
         // eat grass in each region
         regions.forEach(IRegion::grassCollisions);
         // procreate in each region
-        for (IRegion region : regions) {
-            region.animalCollisions().ifPresent(newborns -> newborns.forEach(this::place));
-        }
+        regions.forEach(IRegion::animalCollisions);
         // add new grass
         regions.forEach(IRegion::growGrass);
 
@@ -101,6 +100,7 @@ public class WorldMap implements IWorldMap {
     public boolean isOccupied(Vector2d vector2d){
         return (objectAt(vector2d) != null);
     }
+
     public void positionChanged(Animal animal, Vector2d from){
         regions.forEach(r-> r.onMove(animal, from));
     }
@@ -108,6 +108,19 @@ public class WorldMap implements IWorldMap {
     private void removeDeadAnimal(Animal animal){
         regions.forEach(r->r.onDeath(animal));
         this.animals.remove(animal);
+    }
+
+    public void procreate(Animal first, Animal other){
+        Vector2d position = first.getPosition();
+        List<Vector2d> emptyPos = new Rect(
+                            new Vector2d(position.x-1, position.y-1),
+                            new Vector2d(position.x+1, position.y+1))
+                    .toVectors()
+                    .stream().filter(pos -> objectAt(pos)==null)
+                    .collect(Collectors.toList());
+        int idx = new Random().nextInt(emptyPos.size());
+        Optional<Animal> child = first.procreate(other, emptyPos.get(idx));
+        child.ifPresent(this::place);
     }
 
     @Override
