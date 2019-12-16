@@ -1,7 +1,7 @@
 package agh.cs.map;
 
 import agh.cs.utils.Vector2d;
-import agh.cs.mapelements.Animal;
+import agh.cs.mapelements.animal.Animal;
 
 /**
  * The interface responsible for interacting with the map of the world.

@@ -1,13 +1,10 @@
-package agh.cs.mapelements;
-
-import org.w3c.dom.ls.LSOutput;
+package agh.cs.mapelements.animal;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Genome {

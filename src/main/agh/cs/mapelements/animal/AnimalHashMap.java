@@ -1,6 +1,7 @@
-package agh.cs.utils;
+package agh.cs.mapelements.animal;
 
-import agh.cs.mapelements.Animal;
+import agh.cs.mapelements.animal.Animal;
+import agh.cs.utils.Vector2d;
 
 import java.util.*;
 

@@ -68,6 +68,9 @@ public class Vector2d {
         return new Vector2d(newX, newY);
     }
 
+    public Vector2d swapCoord(){
+        return new Vector2d(this.y, this.x);
+    }
     @Override
     public int hashCode() {
         return Objects.hash(x, y);

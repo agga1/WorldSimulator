@@ -1,11 +1,8 @@
 package agh.cs.mapElements;
 
-import agh.cs.mapelements.Animal;
-import agh.cs.mapelements.Genome;
-import org.junit.jupiter.api.BeforeEach;
+import agh.cs.mapelements.animal.Genome;
 import org.junit.jupiter.api.Test;
 
-import java.util.Random;
 import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

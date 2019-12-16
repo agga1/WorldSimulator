@@ -1,6 +1,8 @@
 package agh.cs.visualization;
 import javafx.scene.image.Image;
 
+import static agh.cs.configuration.ResourceParser.parseImage;
+
 public final class ViewConfig {
 
     public static final int WINDOW_WIDTH = 900;
@@ -9,8 +11,7 @@ public final class ViewConfig {
     public static final String TITLE = "Game Of Life";
 
     public static Image icon() {
-//        return ("icon.png");
-        return null;
+        return parseImage("cat.jpg");
     }
 
 }

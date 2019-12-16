@@ -1,16 +1,16 @@
-package agh.cs.mapelements;
+package agh.cs.mapelements.animal;
 
 import agh.cs.map.IPositionChangeObserver;
 import agh.cs.map.IWorldMap;
 import agh.cs.configuration.Config;
+import agh.cs.mapelements.IMapElement;
 import agh.cs.utils.Orientation;
-import agh.cs.utils.Rect;
 import agh.cs.utils.Vector2d;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Animal {
+public class Animal implements IMapElement {
     private static int minEnergy = Config.getInstance().params.startEnergy/2;  // minimum energy needed to procreate
     private Orientation orientation = Orientation.NORTH;
     private Vector2d position;

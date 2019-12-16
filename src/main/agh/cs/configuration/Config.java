@@ -9,7 +9,7 @@ public class Config {
     public final Params params;
 
     private Config() {
-        this.params = ParamsParser.parse();
+        this.params = ResourceParser.parseParams();
     }
 
     public static Config getInstance() {

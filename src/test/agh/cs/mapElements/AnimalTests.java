@@ -1,6 +1,6 @@
 package agh.cs.mapElements;
 
-import agh.cs.mapelements.Animal;
+import agh.cs.mapelements.animal.Animal;
 import org.junit.jupiter.api.BeforeEach;
 
 public class AnimalTests {

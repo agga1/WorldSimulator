@@ -2,16 +2,15 @@ package agh.cs.map;
 
 import agh.cs.configuration.Config;
 import agh.cs.mapelements.Grass;
-import agh.cs.utils.AnimalHashMap;
+import agh.cs.mapelements.IMapElement;
+import agh.cs.mapelements.animal.AnimalHashMap;
 import agh.cs.utils.Rect;
 import agh.cs.utils.Vector2d;
-import agh.cs.mapelements.Animal;
+import agh.cs.mapelements.animal.Animal;
 import agh.cs.visualization.MapVisualizer;
-import com.google.gson.internal.bind.util.ISO8601Utils;
+import agh.cs.visualization.ViewController;
 
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import static java.lang.Integer.max;
@@ -25,6 +24,7 @@ public class WorldMap implements IWorldMap {
     private Map<Vector2d, Grass> grassMap = new HashMap<>();
     private AnimalHashMap animalMap = new AnimalHashMap();
     private Set<Vector2d> freeSpace = new HashSet<>();
+    private Set<ViewController> controllers = new HashSet<>();
 
     private int day = 0;
 
@@ -67,11 +67,11 @@ public class WorldMap implements IWorldMap {
         }
         animals.add(animal);
         animalMap.addAnimal(animal);
-        freeSpace.remove(animal.getPosition());
+        updateTile(animal.getPosition());
         return true;
     }
 
-    public void run() throws InterruptedException{
+    public void onUpdate() {
         // remove dead remains
         for(int i=0;i<animals.size();i++)
             if(animals.get(i).isDead()){
@@ -91,7 +91,8 @@ public class WorldMap implements IWorldMap {
         newborns.forEach(this::place);
         // add new grass
         growGrass();
-        visualise(50);
+        // TODO send all changed positions to controller
+//        visualise(50);
     }
     private void growGrass(){
         Set<Vector2d> freeJungle = Set.copyOf(freeSpace).stream()
@@ -102,11 +103,11 @@ public class WorldMap implements IWorldMap {
         Vector2d onDesert = randomFromSet(freeDesert);
         if(onDesert != null){
             grassMap.put(onDesert, new Grass(onDesert));
-            freeSpace.remove(onDesert);
+            updateTile(onDesert);
         }
         if(onJungle != null){
             grassMap.put(onJungle, new Grass(onJungle));
-            freeSpace.remove(onJungle);
+            updateTile(onJungle);
         }
     }
     private static Vector2d randomFromSet(Set<Vector2d> set){
@@ -148,19 +149,23 @@ public class WorldMap implements IWorldMap {
 
     public void positionChanged(Animal animal, Vector2d from){
         animalMap.removeAnimal(animal, from);
-        if(objectAt(from)==null)
-            freeSpace.add(from);
+        updateTile(from);
         animalMap.addAnimal(animal);
-        freeSpace.remove(animal.getPosition());
+        updateTile(animal.getPosition());
     }
 
     private void removeDeadAnimal(Animal animal){
         animalMap.removeAnimal(animal, animal.getPosition());
-        if(objectAt(animal.getPosition())==null)
-            freeSpace.add(animal.getPosition());
+        updateTile(animal.getPosition());
         animals.remove(animal);
     }
-
+    private void updateTile(Vector2d position){
+        if(objectAt(position)==null)
+            freeSpace.add(position);
+        else
+            freeSpace.remove(position);
+        notifyTileChanged(position, (IMapElement) objectAt(position)); // TODO objaectAt return IMapElement!
+    }
     private Optional<Animal> procreate(Vector2d position){
         List<Animal> animalsAtPos = animalMap.get(position);
         if(animalsAtPos.size() < 2 ) return Optional.empty();
@@ -201,5 +206,18 @@ public class WorldMap implements IWorldMap {
     @Override
     public Vector2d[] getBoundaries() {
         return new Vector2d[]{this.rect.lowerLeft, this.rect.upperRight};
+    }
+    public Rect getRect(){ return this.rect; }
+    public Rect getJungleRect() {
+        return jungleRect;
+    }
+
+    // TODO move to constructor, as addUpdateListener()
+    public void setController(ViewController viewController) {
+        this.controllers.add(viewController);
+    }
+
+    public void notifyTileChanged(Vector2d position, IMapElement object){
+        controllers.forEach(c -> c.onTileUpdate(position, object));
     }
 }
